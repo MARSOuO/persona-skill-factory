@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any
 
 
 @dataclass(frozen=True)
@@ -26,7 +26,7 @@ class EvidenceUnit:
     mode: str
     text: str
     source_file: str
-    paragraph_id: Optional[int] = None
+    paragraph_id: int | None = None
     metadata: dict[str, Any] = field(default_factory=dict)
 
 
@@ -42,5 +42,5 @@ class AppConfig:
     default_top_k_evidence: int
     enable_vllm_router: bool = False
     enable_vllm_draft: bool = False
-    vllm_base_url: Optional[str] = None
-    vllm_model: Optional[str] = None
+    vllm_base_url: str | None = None
+    vllm_model: str | None = None

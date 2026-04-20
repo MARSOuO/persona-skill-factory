@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any, Optional
+from typing import Any
 
 from pydantic import BaseModel, Field
 
@@ -11,7 +11,7 @@ class RouteAndPlanRequest(BaseModel):
     top_k_evidence: int = Field(default=4, ge=1, le=10)
     allow_llm_router: bool = Field(default=False)
     allow_llm_draft: bool = Field(default=False)
-    user_context: Optional[dict[str, Any]] = None
+    user_context: dict[str, Any] | None = None
 
 
 class ModeScore(BaseModel):
@@ -38,15 +38,26 @@ class SelectedSkill(BaseModel):
 class EvidenceCandidate(BaseModel):
     evidence_id: str
     unit_id: str
-    skill_id: str
+    skill_id: str | None = None
     matched_skill_ids: list[str] = Field(default_factory=list)
+
     mode: str
     text: str
-    score: float
-    source: str = "retrieval.skill-aware.v1"
+
+    score: float = 0.0
+    score_total: float = 0.0
+    score_skill: float = 0.0
+    score_query_overlap: float = 0.0
+    score_mode_bonus: float = 0.0
+    score_penalty: float = 0.0
+
+    source: str = "retrieval.skill-aware-rerank.v1_1"
     source_file: str = ""
-    paragraph_id: Optional[int] = None
+    paragraph_id: int | None = None
     matched_terms: list[str] = Field(default_factory=list)
+
+    retrieval_stage: str = "recall"
+    topic_drift_flag: bool = False
 
 
 class DraftAnswerShell(BaseModel):

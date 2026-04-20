@@ -9,6 +9,12 @@ from typing import Any
 
 import yaml
 
+from app.utils.tokenize import tokenize_zh_en
+
+
+def build_token_set(text: str) -> list[str]:
+    return tokenize_zh_en(text)
+
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
@@ -67,6 +73,7 @@ def extract_source_file(row: dict[str, Any]) -> str:
         value = row.get(key)
         if isinstance(value, str) and value.strip():
             return value.strip()
+
     meta = row.get("metadata") or {}
     if isinstance(meta, dict):
         for key in ("source_file", "filename", "file_name"):
@@ -95,30 +102,24 @@ def extract_unit_id(row: dict[str, Any], fallback: int) -> str:
 
 
 def tokenize(text: str) -> list[str]:
-    buff = []
-    token = []
-    for ch in text.lower():
-        if ch.isalnum() or "一" <= ch <= "鿿":
-            token.append(ch)
-        else:
-            if token:
-                buff.append("".join(token))
-                token = []
-    if token:
-        buff.append("".join(token))
-    return buff
+    # 为兼容旧逻辑保留；当前等价于 build_token_set
+    return build_token_set(text)
 
 
 def build_index(units: list[dict[str, Any]]) -> list[dict[str, Any]]:
     index_rows: list[dict[str, Any]] = []
+
     for i, row in enumerate(units, start=1):
         unit_id = extract_unit_id(row, i)
         mode = infer_mode(row)
         text = extract_text(row)
         if not text:
             continue
+
         source_file = extract_source_file(row)
         paragraph_id = extract_paragraph_id(row)
+        token_set = build_token_set(text)
+
         index_rows.append(
             {
                 "evidence_id": f"evidence::{unit_id}",
@@ -127,43 +128,69 @@ def build_index(units: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 "text": text,
                 "source_file": source_file,
                 "paragraph_id": paragraph_id,
+                "token_set": token_set,
+                "text_len": len(text),
+                "skill_hints": [],
                 "metadata": {
-                    "unit_tokens": tokenize(text),
+                    "unit_tokens": token_set,
                 },
             }
         )
+
     return index_rows
 
 
-def build_skill_links(index_rows: list[dict[str, Any]], skills: list[dict[str, Any]], top_n: int) -> dict[str, list[str]]:
+def build_skill_links(
+    index_rows: list[dict[str, Any]],
+    skills: list[dict[str, Any]],
+    top_n: int,
+) -> dict[str, list[str]]:
     units_by_mode: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for row in index_rows:
         units_by_mode[str(row.get("mode") or "unknown")].append(row)
 
     skill_links: dict[str, list[str]] = {}
+
     for skill in skills:
         skill_id = str(skill.get("skill_id") or skill.get("id") or "").strip()
         if not skill_id:
             continue
+
         mode = str(skill.get("mode") or "unknown")
         triggers = [str(x).lower() for x in skill.get("triggers", []) if str(x).strip()]
         anti_triggers = [str(x).lower() for x in skill.get("anti_triggers", []) if str(x).strip()]
         summary_tokens = set(tokenize(str(skill.get("summary") or "")))
 
         scored: list[tuple[float, str]] = []
+
         for unit in units_by_mode.get(mode, []):
             text = str(unit.get("text") or "").lower()
-            unit_tokens = set(unit.get("metadata", {}).get("unit_tokens", []))
+            token_set = set(unit.get("token_set", []))
+
             trigger_hits = sum(1 for t in triggers if t in text)
             anti_hits = sum(1 for t in anti_triggers if t in text)
-            summary_hits = len(summary_tokens & unit_tokens)
+            summary_hits = len(summary_tokens & token_set)
+
             score = 1.2 * trigger_hits + 0.08 * summary_hits - 0.4 * anti_hits
             if score > 0:
                 scored.append((score, str(unit["unit_id"])))
 
         scored.sort(key=lambda x: x[0], reverse=True)
         skill_links[skill_id] = [unit_id for _, unit_id in scored[:top_n]]
+
     return skill_links
+
+
+def backfill_skill_hints(index_rows: list[dict[str, Any]], links: dict[str, list[str]]) -> None:
+    unit_to_skills: dict[str, list[str]] = defaultdict(list)
+
+    for skill_id, unit_ids in links.items():
+        for unit_id in unit_ids:
+            unit_to_skills[str(unit_id)].append(skill_id)
+
+    for row in index_rows:
+        unit_id = str(row["unit_id"])
+        row["skill_hints"] = unit_to_skills.get(unit_id, [])
 
 
 def main() -> None:
@@ -185,6 +212,7 @@ def main() -> None:
 
     index_rows = build_index(units)
     links = build_skill_links(index_rows, skills, top_n=args.top_n_per_skill)
+    backfill_skill_hints(index_rows, links)
 
     out_index.parent.mkdir(parents=True, exist_ok=True)
     out_links.parent.mkdir(parents=True, exist_ok=True)
@@ -199,18 +227,20 @@ def main() -> None:
     for row in index_rows:
         mode_counts[str(row.get("mode") or "unknown")] += 1
 
-    print(json.dumps(
-        {
-            "units_in": len(units),
-            "evidence_rows_out": len(index_rows),
-            "mode_counts": dict(mode_counts),
-            "skill_links": len(links),
-            "out_index": str(out_index),
-            "out_links": str(out_links),
-        },
-        ensure_ascii=False,
-        indent=2,
-    ))
+    print(
+        json.dumps(
+            {
+                "units_in": len(units),
+                "evidence_rows_out": len(index_rows),
+                "mode_counts": dict(mode_counts),
+                "skill_links": len(links),
+                "out_index": str(out_index),
+                "out_links": str(out_links),
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+    )
 
 
 if __name__ == "__main__":
