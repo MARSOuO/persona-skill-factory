@@ -64,7 +64,7 @@ MODE_CONTRACTS = {
 }
 
 
-def _clip_text(text: str, limit: int = 120) -> str:
+def _clip_text(text: str, limit: int = 140) -> str:
     text = " ".join(text.strip().split())
     if len(text) <= limit:
         return text
@@ -72,7 +72,7 @@ def _clip_text(text: str, limit: int = 120) -> str:
 
 
 class PromptBuilder:
-    version = "prompt.builder.v1"
+    version = "prompt.builder.v2"
 
     def build(self, plan: RouteAndPlanResponse) -> PromptPack:
         mode = plan.predicted_mode.label
@@ -87,7 +87,7 @@ class PromptBuilder:
         for ev in plan.evidence_candidates[:5]:
             allowed_evidence_ids.append(ev.evidence_id)
             evidence_block_lines.append(
-                f"[{ev.evidence_id}] { _clip_text(ev.text, 140) }"
+                f"[{ev.evidence_id}] { _clip_text(ev.text, 160) }"
             )
         evidence_block = "\n".join(evidence_block_lines) or "none"
 
@@ -101,9 +101,9 @@ class PromptBuilder:
 
 {MODE_CONTRACTS.get(mode, "")}
 
-输出要求：
+硬约束：
 1. 只能输出 JSON。
-2. JSON 结构必须是：
+2. JSON 结构必须严格是：
 {{
   "answer_text": "...",
   "used_evidence_ids": ["..."],
@@ -111,6 +111,9 @@ class PromptBuilder:
 }}
 3. used_evidence_ids 只能从给定 evidence ids 中选择。
 4. 不要输出 markdown，不要输出解释，不要输出代码块。
+5. 不要捏造没有提供的经历、人物背景或事实。
+6. answer_text 必须是完整中文回答，而不是提纲。
+7. 优先使用给定 answer shell 的 opener / body logic / closer。
 """.strip()
 
         user_prompt = f"""
@@ -131,7 +134,7 @@ class PromptBuilder:
 - do_not_do:
 {do_not_do}
 
-证据：
+证据（只能使用这些 evidence ids）：
 {evidence_block}
 
 请严格按模式要求生成最终答案。

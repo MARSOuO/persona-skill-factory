@@ -26,7 +26,7 @@ def _clip_text(text: str, limit: int = 48) -> str:
 
 
 class AnswerGenerator:
-    version = "answer.gen.v1"
+    version = "answer.gen.v2"
 
     def generate(
         self,
@@ -56,6 +56,8 @@ class AnswerGenerator:
     ) -> GeneratedAnswer:
         base_url = os.getenv("VLLM_BASE_URL", "").rstrip("/")
         model = os.getenv("VLLM_MODEL", "").strip()
+        timeout_sec = int(os.getenv("ANSWER_TIMEOUT_SEC", "60"))
+        use_response_format = os.getenv("ANSWER_USE_RESPONSE_FORMAT", "0") == "1"
 
         if not base_url or not model:
             raise RuntimeError("VLLM_BASE_URL or VLLM_MODEL is not set")
@@ -70,6 +72,9 @@ class AnswerGenerator:
             ],
         }
 
+        if use_response_format:
+            payload["response_format"] = {"type": "json_object"}
+
         req = urllib.request.Request(
             url=base_url + "/v1/chat/completions",
             data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
@@ -78,7 +83,7 @@ class AnswerGenerator:
         )
 
         try:
-            with urllib.request.urlopen(req, timeout=60) as resp:
+            with urllib.request.urlopen(req, timeout=timeout_sec) as resp:
                 raw = resp.read().decode("utf-8")
         except urllib.error.HTTPError as e:
             raise RuntimeError(f"LLM HTTPError: {e.code}") from e
@@ -91,7 +96,9 @@ class AnswerGenerator:
 
         answer_text = str(parsed.get("answer_text", "")).strip()
         used_evidence_ids = [
-            str(x) for x in parsed.get("used_evidence_ids", []) if str(x) in prompt_pack.allowed_evidence_ids
+            str(x)
+            for x in parsed.get("used_evidence_ids", [])
+            if str(x) in prompt_pack.allowed_evidence_ids
         ]
 
         if not answer_text:
