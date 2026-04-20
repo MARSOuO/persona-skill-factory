@@ -1,0 +1,68 @@
+{
+  "total_eval_records": 320,
+  "task_counts": {
+    "routing_eval": 160,
+    "skill_eval": 160
+  },
+  "split_counts": {
+    "dev": 160,
+    "test": 160
+  },
+  "task_split_counts": {
+    "routing_eval": {
+      "dev": 80,
+      "test": 80
+    },
+    "skill_eval": {
+      "dev": 80,
+      "test": 80
+    }
+  },
+  "expected_mode_counts": {
+    "teaching": 80,
+    "bridge": 80,
+    "commentary": 80,
+    "persona": 80
+  },
+  "top_expected_skills": [
+    [
+      "轻松过渡式讲解",
+      40
+    ],
+    [
+      "人设化互动表达",
+      40
+    ],
+    [
+      "评论性判断输出",
+      37
+    ],
+    [
+      "分步骤推进讲解",
+      9
+    ],
+    [
+      "教学解释推进",
+      9
+    ],
+    [
+      "讲解后做归纳收束",
+      8
+    ],
+    [
+      "先判断再选方法",
+      8
+    ],
+    [
+      "用类比或例子导入知识点",
+      6
+    ],
+    [
+      "指出问题本质",
+      3
+    ]
+  ],
+  "router_dev_count": 80,
+  "router_test_count": 80,
+  "canonical_skill_count": 10
+}

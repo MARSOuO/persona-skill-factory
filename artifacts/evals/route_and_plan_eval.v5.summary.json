@@ -1,0 +1,47 @@
+{
+  "records": 320,
+  "task_counts": {
+    "routing_eval": 160,
+    "skill_eval": 160
+  },
+  "routing": {
+    "total": 320,
+    "accuracy": 1.0,
+    "correct": 320,
+    "confusion_matrix": {
+      "bridge": {
+        "bridge": 80,
+        "commentary": 0,
+        "persona": 0,
+        "teaching": 0
+      },
+      "commentary": {
+        "bridge": 0,
+        "commentary": 80,
+        "persona": 0,
+        "teaching": 0
+      },
+      "persona": {
+        "bridge": 0,
+        "commentary": 0,
+        "persona": 80,
+        "teaching": 0
+      },
+      "teaching": {
+        "bridge": 0,
+        "commentary": 0,
+        "persona": 0,
+        "teaching": 80
+      }
+    }
+  },
+  "skills": {
+    "total": 160,
+    "top_k_hit_rate": 1.0,
+    "mean_jaccard": 1.0
+  },
+  "errors": {
+    "count": 0,
+    "sample": []
+  }
+}

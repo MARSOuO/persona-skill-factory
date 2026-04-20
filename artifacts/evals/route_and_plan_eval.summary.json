@@ -1,0 +1,348 @@
+{
+  "records": 320,
+  "task_counts": {
+    "routing_eval": 160,
+    "skill_eval": 160
+  },
+  "routing": {
+    "total": 320,
+    "accuracy": 0.5437,
+    "correct": 174,
+    "confusion_matrix": {
+      "bridge": {
+        "bridge": 0,
+        "teaching": 80,
+        "commentary": 0,
+        "persona": 0
+      },
+      "teaching": {
+        "bridge": 0,
+        "teaching": 80,
+        "commentary": 0,
+        "persona": 0
+      },
+      "commentary": {
+        "bridge": 0,
+        "teaching": 0,
+        "commentary": 80,
+        "persona": 0
+      },
+      "persona": {
+        "bridge": 0,
+        "teaching": 66,
+        "commentary": 0,
+        "persona": 14
+      }
+    }
+  },
+  "skills": {
+    "total": 160,
+    "top_k_hit_rate": 0.0,
+    "mean_jaccard": 0.0
+  },
+  "errors": {
+    "count": 233,
+    "sample": [
+      {
+        "row_index": 20,
+        "task": "routing_eval",
+        "query": "这个东西你能不能先温和地带我入门？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "bridge",
+        "mode_error": true
+      },
+      {
+        "row_index": 21,
+        "task": "routing_eval",
+        "query": "这个东西你能不能先温和地带我入门？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "bridge",
+        "mode_error": true
+      },
+      {
+        "row_index": 22,
+        "task": "routing_eval",
+        "query": "这个东西你能不能先温和地带我入门？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "bridge",
+        "mode_error": true
+      },
+      {
+        "row_index": 23,
+        "task": "routing_eval",
+        "query": "这个东西你能不能先温和地带我入门？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "bridge",
+        "mode_error": true
+      },
+      {
+        "row_index": 24,
+        "task": "routing_eval",
+        "query": "这个东西你能不能先温和地带我入门？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "bridge",
+        "mode_error": true
+      },
+      {
+        "row_index": 25,
+        "task": "routing_eval",
+        "query": "这个东西你能不能先温和地带我入门？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "bridge",
+        "mode_error": true
+      },
+      {
+        "row_index": 26,
+        "task": "routing_eval",
+        "query": "这个东西你能不能先温和地带我入门？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "bridge",
+        "mode_error": true
+      },
+      {
+        "row_index": 27,
+        "task": "routing_eval",
+        "query": "这个东西你能不能先温和地带我入门？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "bridge",
+        "mode_error": true
+      },
+      {
+        "row_index": 28,
+        "task": "routing_eval",
+        "query": "这个东西你能不能先温和地带我入门？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "bridge",
+        "mode_error": true
+      },
+      {
+        "row_index": 29,
+        "task": "routing_eval",
+        "query": "这个东西你能不能先温和地带我入门？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "bridge",
+        "mode_error": true
+      },
+      {
+        "row_index": 30,
+        "task": "routing_eval",
+        "query": "这个东西你能不能先温和地带我入门？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "bridge",
+        "mode_error": true
+      },
+      {
+        "row_index": 31,
+        "task": "routing_eval",
+        "query": "这个东西你能不能先温和地带我入门？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "bridge",
+        "mode_error": true
+      },
+      {
+        "row_index": 32,
+        "task": "routing_eval",
+        "query": "这个东西你能不能先温和地带我入门？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "bridge",
+        "mode_error": true
+      },
+      {
+        "row_index": 33,
+        "task": "routing_eval",
+        "query": "这个东西你能不能先温和地带我入门？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "bridge",
+        "mode_error": true
+      },
+      {
+        "row_index": 34,
+        "task": "routing_eval",
+        "query": "这个东西你能不能先温和地带我入门？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "bridge",
+        "mode_error": true
+      },
+      {
+        "row_index": 35,
+        "task": "routing_eval",
+        "query": "这个东西你能不能先温和地带我入门？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "bridge",
+        "mode_error": true
+      },
+      {
+        "row_index": 36,
+        "task": "routing_eval",
+        "query": "这个东西你能不能先温和地带我入门？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "bridge",
+        "mode_error": true
+      },
+      {
+        "row_index": 37,
+        "task": "routing_eval",
+        "query": "这个东西你能不能先温和地带我入门？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "bridge",
+        "mode_error": true
+      },
+      {
+        "row_index": 38,
+        "task": "routing_eval",
+        "query": "这个东西你能不能先温和地带我入门？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "bridge",
+        "mode_error": true
+      },
+      {
+        "row_index": 39,
+        "task": "routing_eval",
+        "query": "这个东西你能不能先温和地带我入门？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "bridge",
+        "mode_error": true
+      },
+      {
+        "row_index": 61,
+        "task": "routing_eval",
+        "query": "用你那种有人味、带互动感的方式跟我说。",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "persona",
+        "mode_error": true
+      },
+      {
+        "row_index": 62,
+        "task": "routing_eval",
+        "query": "用你那种有人味、带互动感的方式跟我说。",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "persona",
+        "mode_error": true
+      },
+      {
+        "row_index": 63,
+        "task": "routing_eval",
+        "query": "用你那种有人味、带互动感的方式跟我说。",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "persona",
+        "mode_error": true
+      },
+      {
+        "row_index": 64,
+        "task": "routing_eval",
+        "query": "用你那种有人味、带互动感的方式跟我说。",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "persona",
+        "mode_error": true
+      },
+      {
+        "row_index": 65,
+        "task": "routing_eval",
+        "query": "用你那种有人味、带互动感的方式跟我说。",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "persona",
+        "mode_error": true
+      }
+    ]
+  }
+}

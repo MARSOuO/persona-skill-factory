@@ -1,0 +1,598 @@
+{
+  "records": 320,
+  "task_counts": {
+    "routing_eval": 160,
+    "skill_eval": 160
+  },
+  "routing": {
+    "total": 320,
+    "accuracy": 1.0,
+    "correct": 320,
+    "confusion_matrix": {
+      "bridge": {
+        "bridge": 80,
+        "commentary": 0,
+        "persona": 0,
+        "teaching": 0
+      },
+      "commentary": {
+        "bridge": 0,
+        "commentary": 80,
+        "persona": 0,
+        "teaching": 0
+      },
+      "persona": {
+        "bridge": 0,
+        "commentary": 0,
+        "persona": 80,
+        "teaching": 0
+      },
+      "teaching": {
+        "bridge": 0,
+        "commentary": 0,
+        "persona": 0,
+        "teaching": 80
+      }
+    }
+  },
+  "skills": {
+    "total": 160,
+    "top_k_hit_rate": 1.0,
+    "mean_jaccard": 0.8844
+  },
+  "errors": {
+    "count": 37,
+    "sample": [
+      {
+        "row_index": 200,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 201,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 202,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 203,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 204,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 205,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 206,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 207,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 208,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 209,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 210,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 211,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 212,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 213,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 214,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 215,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 216,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 280,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 281,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 282,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 283,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 284,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 285,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 286,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      },
+      {
+        "row_index": 287,
+        "task": "skill_eval",
+        "query": "你能不能别只复述，直接说你的判断？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.explicit_stance"
+        ],
+        "gold_skills": [
+          "commentary.judgment_output"
+        ],
+        "gold_skills_display": [
+          "评论性判断输出"
+        ],
+        "predicted_skills_display": [
+          "评论性判断输出",
+          "明确表态式判断输出"
+        ],
+        "skill_jaccard": 0.5,
+        "skill_error": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,248 @@
+from __future__ import annotations
+
+import argparse
+import json
+import statistics
+from collections import Counter, defaultdict
+from pathlib import Path
+from typing import Any
+
+import httpx
+
+DEFAULT_ENDPOINT = "http://127.0.0.1:8000/route_and_plan"
+VALID_MODES = {"teaching", "bridge", "commentary", "persona"}
+
+
+def load_jsonl(path: Path) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for line_no, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            rows.append(json.loads(line))
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"Invalid JSONL at line {line_no}: {exc}") from exc
+    return rows
+
+
+def infer_task(row: dict[str, Any]) -> str:
+    for key in ("task", "eval_type", "subset", "kind"):
+        value = row.get(key)
+        if isinstance(value, str):
+            lowered = value.lower()
+            if "routing" in lowered:
+                return "routing_eval"
+            if "skill" in lowered:
+                return "skill_eval"
+    gold_mode = extract_gold_mode(row)
+    gold_skills = extract_gold_skills(row)
+    if gold_skills:
+        return "skill_eval"
+    if gold_mode:
+        return "routing_eval"
+    return "unknown"
+
+
+def extract_query(row: dict[str, Any]) -> str:
+    candidates = [
+        row.get("query"),
+        row.get("input"),
+        row.get("prompt"),
+        row.get("user_query"),
+        row.get("question"),
+    ]
+    for item in candidates:
+        if isinstance(item, str) and item.strip():
+            return item.strip()
+    raise KeyError(f"Cannot find query-like field in record: {sorted(row.keys())}")
+
+
+def extract_gold_mode(row: dict[str, Any]) -> str | None:
+    direct = [
+        row.get("gold_mode"),
+        row.get("expected_mode"),
+        row.get("label"),
+        row.get("mode"),
+        row.get("router_label"),
+    ]
+    nested = row.get("target") or row.get("labels") or row.get("gold") or {}
+    if isinstance(nested, dict):
+        direct.extend(
+            [
+                nested.get("mode"),
+                nested.get("label"),
+                nested.get("router_label"),
+                nested.get("expected_mode"),
+            ]
+        )
+    for item in direct:
+        if isinstance(item, str) and item in VALID_MODES:
+            return item
+    return None
+
+
+def extract_gold_skills(row: dict[str, Any]) -> list[str]:
+    nested_candidates: list[Any] = [
+        row.get("gold_skill_ids"),
+        row.get("expected_skill_ids"),
+        row.get("skill_ids"),
+        row.get("gold_skills"),
+        row.get("expected_skills"),
+    ]
+    nested = row.get("target") or row.get("labels") or row.get("gold") or {}
+    if isinstance(nested, dict):
+        nested_candidates.extend(
+            [
+                nested.get("skill_ids"),
+                nested.get("gold_skill_ids"),
+                nested.get("skills"),
+                nested.get("gold_skills"),
+            ]
+        )
+
+    skills: list[str] = []
+    for item in nested_candidates:
+        if isinstance(item, list):
+            for elem in item:
+                if isinstance(elem, str):
+                    skills.append(elem)
+                elif isinstance(elem, dict):
+                    candidate = elem.get("skill_id") or elem.get("id") or elem.get("name")
+                    if isinstance(candidate, str):
+                        skills.append(candidate)
+        elif isinstance(item, str):
+            maybe = [part.strip() for part in item.split(",") if part.strip()]
+            skills.extend(maybe)
+    deduped: list[str] = []
+    seen: set[str] = set()
+    for skill in skills:
+        if skill not in seen:
+            seen.add(skill)
+            deduped.append(skill)
+    return deduped
+
+
+def normalize_skill_ids(skill_ids: list[str]) -> list[str]:
+    return sorted(skill_ids)
+
+
+def evaluate_rows(rows: list[dict[str, Any]], endpoint: str, timeout: float, top_k_skills: int, top_k_evidence: int) -> dict[str, Any]:
+    errors: list[dict[str, Any]] = []
+    task_rows: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    mode_confusion: Counter[tuple[str, str]] = Counter()
+    mode_correct = 0
+    mode_total = 0
+    skill_hit = 0
+    skill_total = 0
+    skill_jaccard_scores: list[float] = []
+
+    with httpx.Client(timeout=timeout) as client:
+        for idx, row in enumerate(rows):
+            task = infer_task(row)
+            task_rows[task].append(row)
+            query = extract_query(row)
+            gold_mode = extract_gold_mode(row)
+            gold_skills = normalize_skill_ids(extract_gold_skills(row))
+
+            payload = {
+                "query": query,
+                "top_k_skills": top_k_skills,
+                "top_k_evidence": top_k_evidence,
+            }
+            response = client.post(endpoint, json=payload)
+            response.raise_for_status()
+            body = response.json()
+
+            pred_mode = body["predicted_mode"]["label"]
+            pred_skills = normalize_skill_ids([item["skill_id"] for item in body.get("selected_skills", [])])
+
+            row_error: dict[str, Any] = {
+                "row_index": idx,
+                "task": task,
+                "query": query,
+                "predicted_mode": pred_mode,
+                "predicted_skills": pred_skills,
+            }
+
+            if gold_mode:
+                mode_total += 1
+                mode_confusion[(gold_mode, pred_mode)] += 1
+                row_error["gold_mode"] = gold_mode
+                if gold_mode == pred_mode:
+                    mode_correct += 1
+                else:
+                    row_error["mode_error"] = True
+
+            if gold_skills:
+                skill_total += 1
+                row_error["gold_skills"] = gold_skills
+                pred_set = set(pred_skills)
+                gold_set = set(gold_skills)
+                if gold_set & pred_set:
+                    skill_hit += 1
+                union = gold_set | pred_set
+                jaccard = len(gold_set & pred_set) / len(union) if union else 1.0
+                skill_jaccard_scores.append(jaccard)
+                row_error["skill_jaccard"] = round(jaccard, 4)
+                if pred_set != gold_set:
+                    row_error["skill_error"] = True
+
+            if row_error.get("mode_error") or row_error.get("skill_error"):
+                errors.append(row_error)
+
+    confusion_matrix: dict[str, dict[str, int]] = {mode: {m: 0 for m in VALID_MODES} for mode in VALID_MODES}
+    for (gold, pred), count in mode_confusion.items():
+        confusion_matrix[gold][pred] = count
+
+    summary = {
+        "records": len(rows),
+        "task_counts": {task: len(items) for task, items in task_rows.items()},
+        "routing": {
+            "total": mode_total,
+            "accuracy": round(mode_correct / mode_total, 4) if mode_total else None,
+            "correct": mode_correct,
+            "confusion_matrix": confusion_matrix,
+        },
+        "skills": {
+            "total": skill_total,
+            "top_k_hit_rate": round(skill_hit / skill_total, 4) if skill_total else None,
+            "mean_jaccard": round(statistics.mean(skill_jaccard_scores), 4) if skill_jaccard_scores else None,
+        },
+        "errors": {
+            "count": len(errors),
+            "sample": errors[:25],
+        },
+    }
+    return summary
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Evaluate /route_and_plan against eval_dataset.v1.jsonl")
+    parser.add_argument("--dataset", required=True, help="Path to eval_dataset.v1.jsonl")
+    parser.add_argument("--endpoint", default=DEFAULT_ENDPOINT, help="POST endpoint for /route_and_plan")
+    parser.add_argument("--timeout", type=float, default=30.0)
+    parser.add_argument("--top-k-skills", type=int, default=2)
+    parser.add_argument("--top-k-evidence", type=int, default=4)
+    parser.add_argument("--output", default="eval_outputs/route_and_plan_eval.summary.json")
+    args = parser.parse_args()
+
+    dataset_path = Path(args.dataset)
+    rows = load_jsonl(dataset_path)
+    summary = evaluate_rows(
+        rows=rows,
+        endpoint=args.endpoint,
+        timeout=args.timeout,
+        top_k_skills=args.top_k_skills,
+        top_k_evidence=args.top_k_evidence,
+    )
+
+    output_path = Path(args.output)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(json.dumps(summary, ensure_ascii=False, indent=2))
+    print(f"\nSaved summary to: {output_path}")
+
+
+if __name__ == "__main__":
+    main()

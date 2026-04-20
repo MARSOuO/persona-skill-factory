@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "persona-skill-factory"
+version = "0.1.0"
+description = "Offline distillation factory + online QA service for persona/teaching skill systems"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi",
+  "uvicorn[standard]",
+  "pydantic>=2",
+  "pydantic-settings",
+  "sqlalchemy>=2",
+  "psycopg[binary]",
+  "redis",
+  "httpx",
+  "orjson",
+  "pyyaml",
+  "jsonlines",
+  "tenacity",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

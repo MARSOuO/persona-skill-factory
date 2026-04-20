@@ -1,0 +1,145 @@
+{
+  "raw_count": 15809,
+  "raw_mode": {
+    "bridge": 322,
+    "commentary": 834,
+    "teaching": 13333,
+    "persona": 1320
+  },
+  "dedup_count": 15807,
+  "dedup_mode": {
+    "bridge": 322,
+    "commentary": 834,
+    "teaching": 13331,
+    "persona": 1320
+  },
+  "capped_count": 712,
+  "capped_mode": {
+    "bridge": 80,
+    "commentary": 97,
+    "teaching": 400,
+    "persona": 135
+  },
+  "per_query_cap": 80,
+  "eval_per_mode": 20,
+  "dev_source_mode_before_sample": {
+    "bridge": 20,
+    "commentary": 20,
+    "teaching": 22,
+    "persona": 21
+  },
+  "test_source_mode_before_sample": {
+    "bridge": 31,
+    "teaching": 20,
+    "persona": 21,
+    "commentary": 20
+  },
+  "splits": {
+    "train_count": 537,
+    "train_mode": {
+      "bridge": 29,
+      "persona": 93,
+      "commentary": 57,
+      "teaching": 358
+    },
+    "dev_count": 80,
+    "dev_mode": {
+      "teaching": 20,
+      "bridge": 20,
+      "commentary": 20,
+      "persona": 20
+    },
+    "test_count": 80,
+    "test_mode": {
+      "teaching": 20,
+      "bridge": 20,
+      "commentary": 20,
+      "persona": 20
+    }
+  },
+  "overlap": {
+    "train_dev": {
+      "shared_sources": 0,
+      "shared_queries": 10
+    },
+    "train_test": {
+      "shared_sources": 0,
+      "shared_queries": 9
+    },
+    "dev_test": {
+      "shared_sources": 0,
+      "shared_queries": 9
+    }
+  },
+  "baseline_eval": {
+    "dev": {
+      "count": 80,
+      "accuracy": 0.8875,
+      "gold": {
+        "teaching": 20,
+        "bridge": 20,
+        "commentary": 20,
+        "persona": 20
+      },
+      "pred": {
+        "teaching": 11,
+        "bridge": 27,
+        "commentary": 22,
+        "persona": 20
+      },
+      "confusion": {
+        "teaching": {
+          "teaching": 11,
+          "bridge": 7,
+          "commentary": 2
+        },
+        "bridge": {
+          "bridge": 20
+        },
+        "commentary": {
+          "commentary": 20
+        },
+        "persona": {
+          "persona": 20
+        }
+      }
+    },
+    "test": {
+      "count": 80,
+      "accuracy": 0.9,
+      "gold": {
+        "teaching": 20,
+        "bridge": 20,
+        "commentary": 20,
+        "persona": 20
+      },
+      "pred": {
+        "commentary": 26,
+        "teaching": 12,
+        "bridge": 22,
+        "persona": 20
+      },
+      "confusion": {
+        "teaching": {
+          "commentary": 6,
+          "teaching": 12,
+          "bridge": 2
+        },
+        "bridge": {
+          "bridge": 20
+        },
+        "commentary": {
+          "commentary": 20
+        },
+        "persona": {
+          "persona": 20
+        }
+      }
+    }
+  },
+  "source_counts": {
+    "train_sources": 102,
+    "dev_sources": 5,
+    "test_sources": 6
+  }
+}

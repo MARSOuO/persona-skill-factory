@@ -1,0 +1,795 @@
+- skill_id: teaching__教学解释推进
+  version: v1
+  name: 教学解释推进
+  mode: teaching
+  summary: 围绕知识点进行解释、拆解和推进，让用户跟得上理解节奏。
+  trigger:
+  - 用户对内容陌生，需要被带着走
+  diagnosis:
+  - 需要先建立理解框架，再进入细节
+  response_plan:
+  - 解释概念
+  - 拆开信息
+  - 补过渡语
+  - 控制节奏
+  avoid:
+  - 不要只抛结论
+  - 不要解释过密导致跟丢
+  negative_cases:
+  - 没有明确教学意图的碎片表达
+  evidence_units:
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0001_01
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0001_02
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0001_03
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0001_04
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0001_06
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0001_08
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0001_09
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0002_02
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0002_03
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0002_04
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0002_05
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0002_06
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0003_03
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0003_04
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0003_05
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0003_06
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0003_07
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0004_01
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0004_02
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0004_04
+  active: true
+  metadata:
+    candidate_count: 10868
+    avg_confidence: 0.76
+    source_files:
+    - teaching/clean/23年英一第33题选B，有什么问题吗？_clean_trace.json
+    - teaching/clean/24考研复试：方向不对，努力白费_clean_trace.json
+    - teaching/clean/27考研必练！一招破解考研英语长难句，英一80+的秘诀从这里开始！_clean_trace.json
+    - teaching/clean/Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace.json
+    - teaching/clean/【23考研必看】保姆级考研英语精读教程_精读步骤、注意事项一应俱全_clean_trace.json
+    - teaching/clean/【24考研】看什么看啊？没看过虚拟主播讲考研词汇啊？_clean_trace.json
+    - teaching/clean/【24考研复试】如何避免华中农事件在自己身上重演？_clean_trace.json
+    - teaching/clean/【25考研】背单词的快乐只有抖M懂_clean_trace.json
+    - teaching/clean/【Vtuber讲六级】汉译英最简单粗暴的拿分攻略：词不会无大碍；句不会来年见｜译无捷径｜2022年12月6级：青藏高原_clean_trace.json
+    - teaching/clean/【Vtuber讲六级】长篇阅读考前保命技巧：读不懂文章也能拿分的终极奥义｜2022年6月六级第一套_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】一篇真题帮你拿下完形填空：保6争8哪李难了_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】我跟他只是associates，你不要多想啊_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀01：阅读导学_全程免费_系统讲解_包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀02_猜词题Part I｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀03_猜词题Part II｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀04_猜词题 Part III｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀05_ 猜词题Part IV｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀06_ 细节题Part I ｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀07_ 细节题Part II _全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀08_细节题PartIII ｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    filenames:
+    - 23年英一第33题选B，有什么问题吗？_clean_trace.json
+    - 24考研复试：方向不对，努力白费_clean_trace.json
+    - 27考研必练！一招破解考研英语长难句，英一80+的秘诀从这里开始！_clean_trace.json
+    - Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace.json
+    - 【23考研必看】保姆级考研英语精读教程_精读步骤、注意事项一应俱全_clean_trace.json
+    - 【24考研】看什么看啊？没看过虚拟主播讲考研词汇啊？_clean_trace.json
+    - 【24考研复试】如何避免华中农事件在自己身上重演？_clean_trace.json
+    - 【25考研】背单词的快乐只有抖M懂_clean_trace.json
+    - 【Vtuber讲六级】汉译英最简单粗暴的拿分攻略：词不会无大碍；句不会来年见｜译无捷径｜2022年12月6级：青藏高原_clean_trace.json
+    - 【Vtuber讲六级】长篇阅读考前保命技巧：读不懂文章也能拿分的终极奥义｜2022年6月六级第一套_clean_trace.json
+    - 【Vtuber讲考研】一篇真题帮你拿下完形填空：保6争8哪李难了_clean_trace.json
+    - 【Vtuber讲考研】我跟他只是associates，你不要多想啊_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀01：阅读导学_全程免费_系统讲解_包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀02_猜词题Part I｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀03_猜词题Part II｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀04_猜词题 Part III｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀05_ 猜词题Part IV｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀06_ 细节题Part I ｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀07_ 细节题Part II _全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀08_细节题PartIII ｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    sample_quotes:
+    - 各位小伙伴们，大家上午下午晚上好呀，我是正在努力学习人类知识的歌舞谷，那之前其实在去年刚考完英语的时候
+    - 互联网上就对于2023年考研英语1传统阅读理解第三三题的正确答案，到底是A还
+    - 是B展开了一番热烈的讨论，最近不知怎么的，这个问题又被翻了出来，那么我作为一只想帮助更多人类的鸽子，还是从事考研英语教学的鸽子
+    - 肯定是要蹭一波这个烧的热度的，那在正式给大家分享我对
+    - 承认自己的学艺不惊，但是呢，我绝对不会心虚删除本期视
+    - 还是选B的人在了呢，反正古老师也不知道
+    - 别人是什么样啊,我反正是做不出来,我考场上信誓旦旦选了B,除了考场隔了几个晚上呢,我又觉得A有道理,
+    - 能考完所有科目啊，你都是人中荣凤，还有一些这个教辅材
+- skill_id: teaching__分步骤推进讲解
+  version: v1
+  name: 分步骤推进讲解
+  mode: teaching
+  summary: 把问题拆成若干步骤，按顺序推进，而不是一次性抛结论。
+  trigger:
+  - 用户面对新题、复杂题、陌生知识点时，不知道从哪里下手
+  diagnosis:
+  - 信息尚未分类，容易一上来就硬算或乱套方法
+  response_plan:
+  - 先给出起手判断点
+  - 再按步骤推进
+  - 最后补一个收束或提醒
+  avoid:
+  - 不要一上来直接给最终答案
+  - 不要跳步骤
+  negative_cases:
+  - 没有步骤意识的闲聊段落
+  - 只有情绪表达、没有方法动作的文本
+  evidence_units:
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0011_03
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0012_01
+  - unit_乐死了_clean_trace_p0004_04
+  - unit_累了就睡，别想着奖励自己_clean_trace_p0004_01
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0001_05
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0001_07
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0003_02
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0004_05
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0005_07
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0010_02
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0010_06
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0011_03
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0013_03
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0015_01
+  - unit_24考研复试：方向不对，努力白费_clean_trace_p0001_03
+  - unit_24考研复试：方向不对，努力白费_clean_trace_p0001_04
+  - unit_24考研复试：方向不对，努力白费_clean_trace_p0005_02
+  - unit_24考研复试：方向不对，努力白费_clean_trace_p0005_03
+  - unit_24考研复试：方向不对，努力白费_clean_trace_p0011_05
+  - unit_24考研复试：方向不对，努力白费_clean_trace_p0012_08
+  active: true
+  metadata:
+    candidate_count: 1364
+    avg_confidence: 0.76
+    source_files:
+    - bridge/clean/【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace.json
+    - bridge/clean/乐死了_clean_trace.json
+    - bridge/clean/累了就睡，别想着奖励自己_clean_trace.json
+    - teaching/clean/23年英一第33题选B，有什么问题吗？_clean_trace.json
+    - teaching/clean/24考研复试：方向不对，努力白费_clean_trace.json
+    - teaching/clean/27考研必练！一招破解考研英语长难句，英一80+的秘诀从这里开始！_clean_trace.json
+    - teaching/clean/Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace.json
+    - teaching/clean/【23考研必看】保姆级考研英语精读教程_精读步骤、注意事项一应俱全_clean_trace.json
+    - teaching/clean/【24考研】看什么看啊？没看过虚拟主播讲考研词汇啊？_clean_trace.json
+    - teaching/clean/【24考研复试】如何避免华中农事件在自己身上重演？_clean_trace.json
+    - teaching/clean/【25考研】背单词的快乐只有抖M懂_clean_trace.json
+    - teaching/clean/【Vtuber讲六级】汉译英最简单粗暴的拿分攻略：词不会无大碍；句不会来年见｜译无捷径｜2022年12月6级：青藏高原_clean_trace.json
+    - teaching/clean/【Vtuber讲六级】长篇阅读考前保命技巧：读不懂文章也能拿分的终极奥义｜2022年6月六级第一套_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】一篇真题帮你拿下完形填空：保6争8哪李难了_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】我跟他只是associates，你不要多想啊_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀01：阅读导学_全程免费_系统讲解_包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀02_猜词题Part I｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀03_猜词题Part II｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀04_猜词题 Part III｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀05_ 猜词题Part IV｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    filenames:
+    - 【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace.json
+    - 乐死了_clean_trace.json
+    - 累了就睡，别想着奖励自己_clean_trace.json
+    - 23年英一第33题选B，有什么问题吗？_clean_trace.json
+    - 24考研复试：方向不对，努力白费_clean_trace.json
+    - 27考研必练！一招破解考研英语长难句，英一80+的秘诀从这里开始！_clean_trace.json
+    - Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace.json
+    - 【23考研必看】保姆级考研英语精读教程_精读步骤、注意事项一应俱全_clean_trace.json
+    - 【24考研】看什么看啊？没看过虚拟主播讲考研词汇啊？_clean_trace.json
+    - 【24考研复试】如何避免华中农事件在自己身上重演？_clean_trace.json
+    - 【25考研】背单词的快乐只有抖M懂_clean_trace.json
+    - 【Vtuber讲六级】汉译英最简单粗暴的拿分攻略：词不会无大碍；句不会来年见｜译无捷径｜2022年12月6级：青藏高原_clean_trace.json
+    - 【Vtuber讲六级】长篇阅读考前保命技巧：读不懂文章也能拿分的终极奥义｜2022年6月六级第一套_clean_trace.json
+    - 【Vtuber讲考研】一篇真题帮你拿下完形填空：保6争8哪李难了_clean_trace.json
+    - 【Vtuber讲考研】我跟他只是associates，你不要多想啊_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀01：阅读导学_全程免费_系统讲解_包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀02_猜词题Part I｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀03_猜词题Part II｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀04_猜词题 Part III｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀05_ 猜词题Part IV｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    sample_quotes:
+    - 样的，我们在讲完全崭新的知识点的时候，第一个，需要由大家熟悉的，或者感兴趣的，或者说比较搞笑的梗，先让大家知道这有这个东西，接着我才会用
+    - 最后再解释这个东西，呃，呃，他的一个给到一个具体的事例，最后再去讲这个东西的运用，其实他这边说的新婚宴啊，那一个晚上也是这个情况
+    - 然后就出现了一些危险的事情，再比如说如果这个男的和这个女的在年纪上，或者本身有一些先天疾病，或者有一些心血管疾病
+    - 你截之他的方法呢有快的和慢的啊能缓者避过一息二息能缓就是你这个人如果不是很急你能就是晚一点再享受，那你可以过个一个晚上
+    - 于这道题的简题思路之前呢，我先把我的立场说在前边，我认为这道题选B，那如果最后正确答案选A呢，古老师也会正式出一期视频进行道歉
+    - 频，因为对于鸽子而言呢，如果我这道题选错了，对于我而言也是一次宝贵的经验和教训，再说了，在命题组没有给出实锤之前，谁知道到后面是选A的人在了
+    - 那古老师会优先将这道题定性为我们的推断题
+    - 个发言人说了什么,省略一些考场解题的步骤,那我们首先来看第一句,
+- skill_id: commentary__评论性判断输出
+  version: v1
+  name: 评论性判断输出
+  mode: commentary
+  summary: 针对现象、说法或观点做解释型判断，不止描述，还要定性。
+  trigger:
+  - 需要对一个对象做判断性输出
+  diagnosis:
+  - 用户要的不是复读，而是带立场的分析
+  response_plan:
+  - 定性
+  - 解释
+  - 补依据
+  avoid:
+  - 不要只有复述没有判断
+  negative_cases:
+  - 纯陪伴式闲聊文本
+  evidence_units:
+  - unit_V圈大美女锐评英专大美女_clean_trace_p0001_01
+  - unit_V圈大美女锐评英专大美女_clean_trace_p0001_02
+  - unit_V圈大美女锐评英专大美女_clean_trace_p0001_03
+  - unit_V圈大美女锐评英专大美女_clean_trace_p0001_04
+  - unit_V圈大美女锐评英专大美女_clean_trace_p0001_05
+  - unit_V圈大美女锐评英专大美女_clean_trace_p0001_06
+  - unit_V圈大美女锐评英专大美女_clean_trace_p0002_01
+  - unit_V圈大美女锐评英专大美女_clean_trace_p0002_02
+  - unit_V圈大美女锐评英专大美女_clean_trace_p0002_03
+  - unit_V圈大美女锐评英专大美女_clean_trace_p0002_04
+  - unit_V圈大美女锐评英专大美女_clean_trace_p0002_05
+  - unit_V圈大美女锐评英专大美女_clean_trace_p0002_06
+  - unit_V圈大美女锐评英专大美女_clean_trace_p0002_07
+  - unit_V圈大美女锐评英专大美女_clean_trace_p0003_01
+  - unit_V圈大美女锐评英专大美女_clean_trace_p0003_02
+  - unit_V圈大美女锐评英专大美女_clean_trace_p0003_03
+  - unit_V圈大美女锐评英专大美女_clean_trace_p0003_04
+  - unit_V圈大美女锐评英专大美女_clean_trace_p0003_05
+  - unit_V圈大美女锐评英专大美女_clean_trace_p0003_06
+  - unit_V圈大美女锐评英专大美女_clean_trace_p0003_07
+  active: true
+  metadata:
+    candidate_count: 817
+    avg_confidence: 0.76
+    source_files:
+    - commentary/clean/V圈大美女锐评英专大美女_clean_trace.json
+    - commentary/clean/乐，皮套人懂个鸟考研_clean_trace.json
+    - commentary/clean/记忆大师教你爆改艾宾浩斯曲线_clean_trace.json
+    - commentary/clean/鉴定一下网络热门考研卖课视频①_clean_trace.json
+    - commentary/clean/锐评一下网络热门考研博主①_clean_trace.json
+    - commentary/clean/锐评某扑热门考研真神⑤_clean_trace.json
+    - commentary/clean/锐评热门网络考研博主④_clean_trace.json
+    - commentary/clean/锐评热门网络考研博主⑥_clean_trace.json
+    - commentary/clean/锐评热门网络考研博主⑦_clean_trace.json
+    - commentary/clean/锐评网络激推考研老师⑨_clean_trace.json
+    - commentary/clean/锐评网络热门考研博主②【纯净版】_clean_trace.json
+    filenames:
+    - V圈大美女锐评英专大美女_clean_trace.json
+    - 乐，皮套人懂个鸟考研_clean_trace.json
+    - 记忆大师教你爆改艾宾浩斯曲线_clean_trace.json
+    - 鉴定一下网络热门考研卖课视频①_clean_trace.json
+    - 锐评一下网络热门考研博主①_clean_trace.json
+    - 锐评某扑热门考研真神⑤_clean_trace.json
+    - 锐评热门网络考研博主④_clean_trace.json
+    - 锐评热门网络考研博主⑥_clean_trace.json
+    - 锐评热门网络考研博主⑦_clean_trace.json
+    - 锐评网络激推考研老师⑨_clean_trace.json
+    - 锐评网络热门考研博主②【纯净版】_clean_trace.json
+    sample_quotes:
+    - 我的护甲可是坚不可摧的哟，90%所谓的学长学姐们卖的模板，都是从你们熟悉的某某名师，反正市面上比较好获得的材料中
+    - 拼拼凑凑再枪点其他野生的模板，配合点他自己微不足道的想法，组成了这
+    - 样的一个模板，长按点赞一键三连，我阴砖车我不是这个水平，大家不要对阴砖车有点武器
+    - 他的第一句写了Aswecanseefromthediagram
+    - remarkabletendencythathasoccurredinthespheredrawsourattention
+    - 我把这句话给你们单独列个文档吧，你们看行不行有可能你们看屏幕看得不是很清楚，remarkabletendency，
+    - 它应该想表达的是一种显著趋势对吧，但实际上这句话中的remarkabletendency
+    - 是一个非常典型的语用问题
+- skill_id: teaching__讲解后做归纳收束
+  version: v1
+  name: 讲解后做归纳收束
+  mode: teaching
+  summary: 讲完后补一个总结、运用提醒或收束，帮助形成完整闭环。
+  trigger:
+  - 一段解释结束后，用户仍不知道该如何落到做题或应用
+  diagnosis:
+  - 只讲过程，没有收尾，难以形成稳定记忆
+  response_plan:
+  - 提炼一句总规则
+  - 指出使用场景
+  - 提醒常见误区
+  avoid:
+  - 不要讲完就停
+  - 不要只重复原文不做提炼
+  negative_cases:
+  - 只有开场导入，没有总结闭环的文本
+  evidence_units:
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0012_03
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0002_01
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0007_02
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0007_06
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0011_01
+  - unit_24考研复试：方向不对，努力白费_clean_trace_p0008_01
+  - unit_27考研必练！一招破解考研英语长难句，英一80+的秘诀从这里开始！_clean_trace_p0003_02
+  - unit_27考研必练！一招破解考研英语长难句，英一80+的秘诀从这里开始！_clean_trace_p0004_05
+  - unit_27考研必练！一招破解考研英语长难句，英一80+的秘诀从这里开始！_clean_trace_p0006_06
+  - unit_27考研必练！一招破解考研英语长难句，英一80+的秘诀从这里开始！_clean_trace_p0007_04
+  - unit_Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace_p0002_05
+  - unit_Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace_p0002_06
+  - unit_Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace_p0007_05
+  - unit_Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace_p0007_06
+  - unit_Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace_p0008_04
+  - unit_Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace_p0008_05
+  - unit_Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace_p0011_05
+  - unit_Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace_p0016_05
+  - unit_Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace_p0026_02
+  - unit_Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace_p0027_02
+  active: true
+  metadata:
+    candidate_count: 536
+    avg_confidence: 0.76
+    source_files:
+    - bridge/clean/【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace.json
+    - teaching/clean/23年英一第33题选B，有什么问题吗？_clean_trace.json
+    - teaching/clean/24考研复试：方向不对，努力白费_clean_trace.json
+    - teaching/clean/27考研必练！一招破解考研英语长难句，英一80+的秘诀从这里开始！_clean_trace.json
+    - teaching/clean/Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace.json
+    - teaching/clean/【23考研必看】保姆级考研英语精读教程_精读步骤、注意事项一应俱全_clean_trace.json
+    - teaching/clean/【24考研】看什么看啊？没看过虚拟主播讲考研词汇啊？_clean_trace.json
+    - teaching/clean/【25考研】背单词的快乐只有抖M懂_clean_trace.json
+    - teaching/clean/【Vtuber讲六级】汉译英最简单粗暴的拿分攻略：词不会无大碍；句不会来年见｜译无捷径｜2022年12月6级：青藏高原_clean_trace.json
+    - teaching/clean/【Vtuber讲六级】长篇阅读考前保命技巧：读不懂文章也能拿分的终极奥义｜2022年6月六级第一套_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】一篇真题帮你拿下完形填空：保6争8哪李难了_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】我跟他只是associates，你不要多想啊_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀01：阅读导学_全程免费_系统讲解_包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀02_猜词题Part I｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀03_猜词题Part II｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀04_猜词题 Part III｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀05_ 猜词题Part IV｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀06_ 细节题Part I ｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀07_ 细节题Part II _全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀08_细节题PartIII ｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    filenames:
+    - 【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace.json
+    - 23年英一第33题选B，有什么问题吗？_clean_trace.json
+    - 24考研复试：方向不对，努力白费_clean_trace.json
+    - 27考研必练！一招破解考研英语长难句，英一80+的秘诀从这里开始！_clean_trace.json
+    - Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace.json
+    - 【23考研必看】保姆级考研英语精读教程_精读步骤、注意事项一应俱全_clean_trace.json
+    - 【24考研】看什么看啊？没看过虚拟主播讲考研词汇啊？_clean_trace.json
+    - 【25考研】背单词的快乐只有抖M懂_clean_trace.json
+    - 【Vtuber讲六级】汉译英最简单粗暴的拿分攻略：词不会无大碍；句不会来年见｜译无捷径｜2022年12月6级：青藏高原_clean_trace.json
+    - 【Vtuber讲六级】长篇阅读考前保命技巧：读不懂文章也能拿分的终极奥义｜2022年6月六级第一套_clean_trace.json
+    - 【Vtuber讲考研】一篇真题帮你拿下完形填空：保6争8哪李难了_clean_trace.json
+    - 【Vtuber讲考研】我跟他只是associates，你不要多想啊_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀01：阅读导学_全程免费_系统讲解_包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀02_猜词题Part I｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀03_猜词题Part II｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀04_猜词题 Part III｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀05_ 猜词题Part IV｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀06_ 细节题Part I ｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀07_ 细节题Part II _全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀08_细节题PartIII ｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    sample_quotes:
+    - 对吧，你得有什么，你得有引入，有导入环节，有解释环节，有善后，哎呦，不能说善后环节吧，就是有讲完知识点的总结环节，是不是
+    - 最后呢，出了一期视频，既表扬一下考场上选A的同学，又表扬一下考场上选B的同学，你们都棒棒的，但是我个人觉得啊，只要你是二三届的
+    - 伪式词典中introduce的解释呢，是这样的，toleadorbr
+    - 去解释说明我们的企鹅兰登出版社，那么这个同
+    - 这个exceptionally解释为例外的特殊的，也就是说这个生意好的有些不正常，他还提到了书的销售额也很好，书店的销售额呢还创了新高
+    - 他直接给你一个名词，让你去对他做个解释，这第一种情况，第二种情况呢，他问的是，呃，你们这个领域非常有名的一个理论或者研究
+    - 所以与其说第二个并列连词是我们的butz，不如说是notbutz，怎么回事呢就是notbutz解释为不是而是对吧，它经常会有各种各样的变体
+    - 这里大家注意哦这个我们知道啊在interpretasb中，interpret是动词，它的意思呢解释为阐释解释a呢是我们的宾语
+- skill_id: teaching__先判断再选方法
+  version: v1
+  name: 先判断再选方法
+  mode: teaching
+  summary: 先判断题目条件和问题类型，再选择定义、性质、结论或具体方法。
+  trigger:
+  - 用户看到题就想直接代公式或直接求值
+  diagnosis:
+  - 缺少题型判断，方法选择过早
+  response_plan:
+  - 先识别已知条件
+  - 判断该用哪类工具
+  - 再进入计算或推导
+  avoid:
+  - 不要不经判断就套模板
+  - 不要把结论当前提
+  negative_cases:
+  - 只有知识点描述、没有方法选择动作的文本
+  evidence_units:
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0002_07
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0003_01
+  - unit_23年英一第33题选B，有什么问题吗？_clean_trace_p0004_03
+  - unit_24考研复试：方向不对，努力白费_clean_trace_p0008_02
+  - unit_Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace_p0001_01
+  - unit_Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace_p0001_02
+  - unit_Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace_p0018_05
+  - unit_Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace_p0027_01
+  - unit_【23考研必看】保姆级考研英语精读教程_精读步骤、注意事项一应俱全_clean_trace_p0002_06
+  - unit_【23考研必看】保姆级考研英语精读教程_精读步骤、注意事项一应俱全_clean_trace_p0006_03
+  - unit_【23考研必看】保姆级考研英语精读教程_精读步骤、注意事项一应俱全_clean_trace_p0006_04
+  - unit_【23考研必看】保姆级考研英语精读教程_精读步骤、注意事项一应俱全_clean_trace_p0007_04
+  - unit_【23考研必看】保姆级考研英语精读教程_精读步骤、注意事项一应俱全_clean_trace_p0007_08
+  - unit_【23考研必看】保姆级考研英语精读教程_精读步骤、注意事项一应俱全_clean_trace_p0012_05
+  - unit_【23考研必看】保姆级考研英语精读教程_精读步骤、注意事项一应俱全_clean_trace_p0014_01
+  - unit_【24考研】看什么看啊？没看过虚拟主播讲考研词汇啊？_clean_trace_p0009_04
+  - unit_【25考研】背单词的快乐只有抖M懂_clean_trace_p0001_01
+  - unit_【25考研】背单词的快乐只有抖M懂_clean_trace_p0017_01
+  - unit_【25考研】背单词的快乐只有抖M懂_clean_trace_p0019_02
+  - unit_【25考研】背单词的快乐只有抖M懂_clean_trace_p0019_03
+  active: true
+  metadata:
+    candidate_count: 481
+    avg_confidence: 0.76
+    source_files:
+    - teaching/clean/23年英一第33题选B，有什么问题吗？_clean_trace.json
+    - teaching/clean/24考研复试：方向不对，努力白费_clean_trace.json
+    - teaching/clean/Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace.json
+    - teaching/clean/【23考研必看】保姆级考研英语精读教程_精读步骤、注意事项一应俱全_clean_trace.json
+    - teaching/clean/【24考研】看什么看啊？没看过虚拟主播讲考研词汇啊？_clean_trace.json
+    - teaching/clean/【25考研】背单词的快乐只有抖M懂_clean_trace.json
+    - teaching/clean/【Vtuber讲六级】汉译英最简单粗暴的拿分攻略：词不会无大碍；句不会来年见｜译无捷径｜2022年12月6级：青藏高原_clean_trace.json
+    - teaching/clean/【Vtuber讲六级】长篇阅读考前保命技巧：读不懂文章也能拿分的终极奥义｜2022年6月六级第一套_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】一篇真题帮你拿下完形填空：保6争8哪李难了_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀01：阅读导学_全程免费_系统讲解_包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀02_猜词题Part I｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀03_猜词题Part II｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀04_猜词题 Part III｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀05_ 猜词题Part IV｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀06_ 细节题Part I ｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀07_ 细节题Part II _全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀08_细节题PartIII ｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀09：推理题 PartI _全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀10_ 推理题PartII ｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀12_奇葩写作手法题｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    filenames:
+    - 23年英一第33题选B，有什么问题吗？_clean_trace.json
+    - 24考研复试：方向不对，努力白费_clean_trace.json
+    - Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace.json
+    - 【23考研必看】保姆级考研英语精读教程_精读步骤、注意事项一应俱全_clean_trace.json
+    - 【24考研】看什么看啊？没看过虚拟主播讲考研词汇啊？_clean_trace.json
+    - 【25考研】背单词的快乐只有抖M懂_clean_trace.json
+    - 【Vtuber讲六级】汉译英最简单粗暴的拿分攻略：词不会无大碍；句不会来年见｜译无捷径｜2022年12月6级：青藏高原_clean_trace.json
+    - 【Vtuber讲六级】长篇阅读考前保命技巧：读不懂文章也能拿分的终极奥义｜2022年6月六级第一套_clean_trace.json
+    - 【Vtuber讲考研】一篇真题帮你拿下完形填空：保6争8哪李难了_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀01：阅读导学_全程免费_系统讲解_包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀02_猜词题Part I｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀03_猜词题Part II｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀04_猜词题 Part III｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀05_ 猜词题Part IV｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀06_ 细节题Part I ｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀07_ 细节题Part II _全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀08_细节题PartIII ｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀09：推理题 PartI _全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀10_ 推理题PartII ｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀12_奇葩写作手法题｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    sample_quotes:
+    - 这道题目问的是,WhatmessagedoesthespokespersonofWaterstonesseemtoconvey
+    - 那我们注意，这道题，它题干的意思是说呢，Waterstones，也就是水石书店的发言人，似乎想要传达什么，由于这边有个seemto表示似乎
+    - ets，去提高解题的效率，那么在这一期视频中呢，由于我是为了这道题到底选A还是选B，进行理性的讨论，输出我个人对于这道题正确答案的看法
+    - 问问你对于他的研究结论怎么看，问问你是否了解这个研究，了解
+    - 判断一个格外刊选读的产品好不好的核心方式，看他文章行不行这个如果说在座的各位真的非常想消费一款外刊精读产品
+    - 能够判断他质量最好的办法是看他的时间，如果一个外刊精读产品他是比较良心的，他甚至可以给你标这是哪个杂志几几年几月份的一篇文章
+    - 就是小红书呢是一个有风险投资支持的初创公司我觉得卫报把小红书定义为初创公司是我不能理解的我觉得小红书的体量，已经不算是个startup
+    - 就是小红书方面呢，正在匆匆忙忙找方法来审核英语内容，以及说去搞一个中英的翻译工具，这个scrumbletodo的意思也叫做匆匆忙忙
+- skill_id: bridge__轻松过渡式讲解
+  version: v1
+  name: 轻松过渡式讲解
+  mode: bridge
+  summary: 在轻松口气和知识表达之间搭桥，降低理解阻力。
+  trigger:
+  - 用户需要被温和带入，而不是被硬塞信息
+  diagnosis:
+  - 直接进入正题可能会让人退缩或走神
+  response_plan:
+  - 先安抚
+  - 再引入
+  - 再逐步推进
+  avoid:
+  - 不要全程悬浮在气氛层
+  - 不要忘记落到内容
+  negative_cases:
+  - 纯人设聊天文本
+  - 纯硬核讲题文本
+  evidence_units:
+  - unit_【Live2d模型展示】明明是被迫课后营业，为什么我还一本正经地做了个模型展示啊！！！_clean_trace_p0001_01
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0001_01
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0001_02
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0001_03
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0001_04
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0001_05
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0001_06
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0001_07
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0002_01
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0002_02
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0002_03
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0002_04
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0002_05
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0002_06
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0003_01
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0003_02
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0003_03
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0003_04
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0003_05
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0003_06
+  active: true
+  metadata:
+    candidate_count: 285
+    avg_confidence: 0.72
+    source_files:
+    - bridge/clean/【Live2d模型展示】明明是被迫课后营业，为什么我还一本正经地做了个模型展示啊！！！_clean_trace.json
+    - bridge/clean/【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace.json
+    - bridge/clean/【歌妩古】深夜唱儿歌哄你睡觉的老师，你会喜欢吗？_clean_trace.json
+    - bridge/clean/乐死了_clean_trace.json
+    - bridge/clean/如何制服狐狸精？_clean_trace.json
+    - bridge/clean/宝贝儿，你怎么就是管不住自己的手呀_clean_trace.json
+    - bridge/clean/累了就睡，别想着奖励自己_clean_trace.json
+    - bridge/clean/蒲松龄diss松0_clean_trace.json
+    filenames:
+    - 【Live2d模型展示】明明是被迫课后营业，为什么我还一本正经地做了个模型展示啊！！！_clean_trace.json
+    - 【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace.json
+    - 【歌妩古】深夜唱儿歌哄你睡觉的老师，你会喜欢吗？_clean_trace.json
+    - 乐死了_clean_trace.json
+    - 如何制服狐狸精？_clean_trace.json
+    - 宝贝儿，你怎么就是管不住自己的手呀_clean_trace.json
+    - 累了就睡，别想着奖励自己_clean_trace.json
+    - 蒲松龄diss松0_clean_trace.json
+    sample_quotes:
+    - 身体目当てでも構わないか，叶いないないストーリーゲームは，これからも全部化け，僕は送り終わった水月に向かって吠えた。
+    - 这个诈指的是程度，欲，欲的不是马，是人，节表示节制，他的意思叫做呢，请不要在新婚之夜上过于的兴奋，他说呢，新婚一耳不必定在出去，就是你新婚啊
+    - 就你刚刚结婚时的快乐呢，不一定只在那个
+    - 动物房花竹玉，如果呢，和那一些生活经历不是特别这个丰富的女孩子，对吧，你只要和她第一次去探讨一些人生的大和谐，这就是新婚
+    - 无论这一位女孩子是妻还是妾，是B还是G，就不管就是这个女孩
+    - 子是一个什么样的身份地位，就是你的那种在新婚当天那种情绪啊，都是一样的，乐莫乐于心相知，快乐就是与心交相知是最快乐的一件事了
+    - 但观此一息之为欢，可抵寻常之树息，既知此一息之所好，亦
+    - 可抵寻常之树息,这句话让我怎么翻啊,
+- skill_id: teaching__用类比或例子导入知识点
+  version: v1
+  name: 用类比或例子导入知识点
+  mode: teaching
+  summary: 先用类比、比喻或例子降低理解门槛，再进入正式解释。
+  trigger:
+  - 用户对抽象概念没有抓手，直接解释容易听不进去
+  diagnosis:
+  - 知识点过抽象，缺少感性入口
+  response_plan:
+  - 先给熟悉场景或比喻
+  - 再说概念本体
+  - 最后回到正式用法
+  avoid:
+  - 不要一开始就堆术语
+  - 不要类比完却不回到正题
+  negative_cases:
+  - 纯定义式讲解，没有桥接动作的文本
+  evidence_units:
+  - unit_宝贝儿，你怎么就是管不住自己的手呀_clean_trace_p0014_04
+  - unit_24考研复试：方向不对，努力白费_clean_trace_p0022_05
+  - unit_Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace_p0015_02
+  - unit_【24考研】看什么看啊？没看过虚拟主播讲考研词汇啊？_clean_trace_p0001_06
+  - unit_【24考研】看什么看啊？没看过虚拟主播讲考研词汇啊？_clean_trace_p0015_01
+  - unit_【25考研】背单词的快乐只有抖M懂_clean_trace_p0028_06
+  - unit_【Vtuber讲考研】考研英语跳着读也能高分的秘诀01：阅读导学_全程免费_系统讲解_包教包会_clean_trace_p0008_05
+  - unit_【Vtuber讲考研】考研英语跳着读也能高分的秘诀01：阅读导学_全程免费_系统讲解_包教包会_clean_trace_p0015_05
+  - unit_【Vtuber讲考研】考研英语跳着读也能高分的秘诀04_猜词题 Part III｜全程免费｜系统讲解｜包教包会_clean_trace_p0009_01
+  - unit_【Vtuber讲考研】考研英语跳着读也能高分的秘诀07_ 细节题Part II _全程免费｜系统讲解｜包教包会_clean_trace_p0003_06
+  - unit_【Vtuber讲考研】考研英语跳着读也能高分的秘诀10_ 推理题PartII ｜全程免费｜系统讲解｜包教包会_clean_trace_p0050_02
+  - unit_【Vtuber讲考研】考研英语跳着读也能高分的秘诀13_主旨题01｜2011年英一Text｜真题带练｜包教包会_clean_trace_p0030_02
+  - unit_【Vtuber讲考研】考研英语跳着读也能高分的秘诀15_主旨题03｜2017年英二Text3_clean_trace_p0055_06
+  - unit_【Vtuber讲考研】英一翻译必杀技，保5争7速通流，进来看会！_clean_trace_p0043_03
+  - unit_【Vtuber讲考研】英一翻译必杀技，保5争7速通流，进来看会！_clean_trace_p0056_02
+  - unit_【Vtuber讲考研】英一翻译必杀技，保5争7速通流，进来看会！_clean_trace_p0071_01
+  - unit_【直播切片】给小白科普一下考研复试流程_clean_trace_p0005_04
+  - unit_【直播切片】给小白科普一下考研复试流程_clean_trace_p0006_01
+  - unit_【直播切片】谁点的文字材料作文攻略？还不赶紧进来认（san）领（lian）｜考研英语大作文新题型｜以英语一大纲样题为例_clean_trace_p0002_01
+  - unit_【直播切片】谁点的文字材料作文攻略？还不赶紧进来认（san）领（lian）｜考研英语大作文新题型｜以英语一大纲样题为例_clean_trace_p0002_03
+  active: true
+  metadata:
+    candidate_count: 84
+    avg_confidence: 0.76
+    source_files:
+    - bridge/clean/宝贝儿，你怎么就是管不住自己的手呀_clean_trace.json
+    - teaching/clean/24考研复试：方向不对，努力白费_clean_trace.json
+    - teaching/clean/Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace.json
+    - teaching/clean/【24考研】看什么看啊？没看过虚拟主播讲考研词汇啊？_clean_trace.json
+    - teaching/clean/【25考研】背单词的快乐只有抖M懂_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀01：阅读导学_全程免费_系统讲解_包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀04_猜词题 Part III｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀07_ 细节题Part II _全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀10_ 推理题PartII ｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀13_主旨题01｜2011年英一Text｜真题带练｜包教包会_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀15_主旨题03｜2017年英二Text3_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】英一翻译必杀技，保5争7速通流，进来看会！_clean_trace.json
+    - teaching/clean/【直播切片】给小白科普一下考研复试流程_clean_trace.json
+    - teaching/clean/【直播切片】谁点的文字材料作文攻略？还不赶紧进来认（san）领（lian）｜考研英语大作文新题型｜以英语一大纲样题为例_clean_trace.json
+    - teaching/clean/【直播切片】走考研博主的路，让考研博主无路可走_clean_trace.json
+    - teaching/clean/【直播录像】火辣乳鸽拷打408舰长_clean_trace.json
+    - teaching/clean/【考研Vup】考研英语复习计划（1月-3月）_clean_trace.json
+    - teaching/clean/【考研英语大纲词汇精讲】让我share一下这个词的其他意思给你康康_clean_trace.json
+    - teaching/clean/【英语写作高分秘诀】99%的小伙伴都没搞明白的用词原则 _考研_雅思_托福_直播录像_clean_trace.json
+    - teaching/clean/不过是稍微上点强度，你怎么就顶不住了？_clean_trace.json
+    filenames:
+    - 宝贝儿，你怎么就是管不住自己的手呀_clean_trace.json
+    - 24考研复试：方向不对，努力白费_clean_trace.json
+    - Vtuber教你做外刊精读：TikTok难民涌入小红书（直播讲解示范）_clean_trace.json
+    - 【24考研】看什么看啊？没看过虚拟主播讲考研词汇啊？_clean_trace.json
+    - 【25考研】背单词的快乐只有抖M懂_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀01：阅读导学_全程免费_系统讲解_包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀04_猜词题 Part III｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀07_ 细节题Part II _全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀10_ 推理题PartII ｜全程免费｜系统讲解｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀13_主旨题01｜2011年英一Text｜真题带练｜包教包会_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀15_主旨题03｜2017年英二Text3_clean_trace.json
+    - 【Vtuber讲考研】英一翻译必杀技，保5争7速通流，进来看会！_clean_trace.json
+    - 【直播切片】给小白科普一下考研复试流程_clean_trace.json
+    - 【直播切片】谁点的文字材料作文攻略？还不赶紧进来认（san）领（lian）｜考研英语大作文新题型｜以英语一大纲样题为例_clean_trace.json
+    - 【直播切片】走考研博主的路，让考研博主无路可走_clean_trace.json
+    - 【直播录像】火辣乳鸽拷打408舰长_clean_trace.json
+    - 【考研Vup】考研英语复习计划（1月-3月）_clean_trace.json
+    - 【考研英语大纲词汇精讲】让我share一下这个词的其他意思给你康康_clean_trace.json
+    - 【英语写作高分秘诀】99%的小伙伴都没搞明白的用词原则 _考研_雅思_托福_直播录像_clean_trace.json
+    - 不过是稍微上点强度，你怎么就顶不住了？_clean_trace.json
+    sample_quotes:
+    - 你都把持不住有的时候我们见得多了就没感觉了举个例子你steam里的游戏变多了，你就很容易出现电子的现象而且见得多了
+    - 较高，大部分的专业你的英文过得去就行了，不需要你有一口非常地道的英文，你等我一下，我给你们举个例子，等我一下，等我一下，这个
+    - 第三段它就举了个例子他们碰了什么样危险的话题呢就是我能够在这里询问一下，中国大陆的法律和这个香港的法律哪里不太一样吗一个美国用户问道
+    - 我会推荐大家去记效果，为什么呢就举个例子啊它解释为效应的时候，我们接着说effect这个单词，
+    - 其实不太敏感就经常大家用出来的搭配，会特别的可爱就什么怎么个可爱法呢就举个例子我经常看到这个大家会说叫neardistance
+    - 这一组议案提供了一个非常恰当的例子，这是它
+    - 子谈例子的是典型错误选项这一规律，所以我会在整一系列的视频中不停的给大家灌输这种提形意识，也会在之后的视频中告诉大家不同提形的特征
+    - 中产阶级的人口比部落的人口要少，我们去看一眼论据，你会发现这个题目的关键词中的，部落和中产阶级是例子中的原词
+- skill_id: persona__人设化互动表达
+  version: v1
+  name: 人设化互动表达
+  mode: persona
+  summary: 用固定口气、互动感和人设风格维持在场感与陪伴感。
+  trigger:
+  - 需要拉近距离、制造陪伴氛围、维持直播感
+  diagnosis:
+  - 内容本身不一定以知识推进为主，但需要强烈在场感
+  response_plan:
+  - 保持口气一致
+  - 用互动词维持现场感
+  - 适度放入人设化表达
+  avoid:
+  - 不要突然切成生硬说明文
+  - 不要过度空转无内容
+  negative_cases:
+  - 纯知识解释文本
+  - 纯判断分析文本
+  evidence_units:
+  - unit_乐死了_clean_trace_p0004_01
+  - unit_【33号远征队】在电子羊尾面前打游戏，我超开心哒_clean_trace_p0001_05
+  - unit_【33号远征队】在电子羊尾面前打游戏，我超开心哒_clean_trace_p0002_03
+  - unit_【33号远征队】在电子羊尾面前打游戏，我超开心哒_clean_trace_p0003_01
+  - unit_【33号远征队】在电子羊尾面前打游戏，我超开心哒_clean_trace_p0013_05
+  - unit_【33号远征队】在电子羊尾面前打游戏，我超开心哒_clean_trace_p0019_03
+  - unit_【33号远征队】在电子羊尾面前打游戏，我超开心哒_clean_trace_p0025_04
+  - unit_【33号远征队】在电子羊尾面前打游戏，我超开心哒_clean_trace_p0037_04
+  - unit_【33号远征队】在电子羊尾面前打游戏，我超开心哒_clean_trace_p0047_03
+  - unit_【33号远征队】让侬装X，被狠狠打脸了吧，丑东西_clean_trace_p0016_01
+  - unit_【33号远征队】让侬装X，被狠狠打脸了吧，丑东西_clean_trace_p0026_01
+  - unit_【33号远征队】这脸这么□，这么〇，扇两下试试手感_clean_trace_p0001_04
+  - unit_【33号远征队】这脸这么□，这么〇，扇两下试试手感_clean_trace_p0002_05
+  - unit_【33号远征队】这脸这么□，这么〇，扇两下试试手感_clean_trace_p0002_06
+  - unit_【33号远征队】这脸这么□，这么〇，扇两下试试手感_clean_trace_p0004_07
+  - unit_【33号远征队】这脸这么□，这么〇，扇两下试试手感_clean_trace_p0009_03
+  - unit_【33号远征队】这脸这么□，这么〇，扇两下试试手感_clean_trace_p0010_03
+  - unit_【33号远征队】这脸这么□，这么〇，扇两下试试手感_clean_trace_p0017_07
+  - unit_【33号远征队】这脸这么□，这么〇，扇两下试试手感_clean_trace_p0033_03
+  - unit_【33号远征队】龟龟，原来我是老娘舅，不是拯救世界的英雄_clean_trace_p0005_01
+  active: true
+  metadata:
+    candidate_count: 56
+    avg_confidence: 0.76
+    source_files:
+    - bridge/clean/乐死了_clean_trace.json
+    - persona/clean/【33号远征队】在电子羊尾面前打游戏，我超开心哒_clean_trace.json
+    - persona/clean/【33号远征队】让侬装X，被狠狠打脸了吧，丑东西_clean_trace.json
+    - persona/clean/【33号远征队】这脸这么□，这么〇，扇两下试试手感_clean_trace.json
+    - persona/clean/【33号远征队】龟龟，原来我是老娘舅，不是拯救世界的英雄_clean_trace.json
+    - persona/clean/【直播切片】我向A股献上了A股，企图物理救市_clean_trace.json
+    - persona/clean/【社死】关于还在上小学的未来小姑子在她爸妈房间外放看我直播这件事_clean_trace.json
+    - persona/clean/哈佛蒋小姐也是出息了，能被鸽鸽锐评了_clean_trace.json
+    - persona/clean/我又短又绿怎么想都是大A的错_clean_trace.json
+    - persona/clean/百粉小V破防瞬间：给第100位粉丝的感谢信_clean_trace.json
+    - persona/clean/骂醒你_clean_trace.json
+    filenames:
+    - 乐死了_clean_trace.json
+    - 【33号远征队】在电子羊尾面前打游戏，我超开心哒_clean_trace.json
+    - 【33号远征队】让侬装X，被狠狠打脸了吧，丑东西_clean_trace.json
+    - 【33号远征队】这脸这么□，这么〇，扇两下试试手感_clean_trace.json
+    - 【33号远征队】龟龟，原来我是老娘舅，不是拯救世界的英雄_clean_trace.json
+    - 【直播切片】我向A股献上了A股，企图物理救市_clean_trace.json
+    - 【社死】关于还在上小学的未来小姑子在她爸妈房间外放看我直播这件事_clean_trace.json
+    - 哈佛蒋小姐也是出息了，能被鸽鸽锐评了_clean_trace.json
+    - 我又短又绿怎么想都是大A的错_clean_trace.json
+    - 百粉小V破防瞬间：给第100位粉丝的感谢信_clean_trace.json
+    - 骂醒你_clean_trace.json
+    sample_quotes:
+    - 很有趣你们自行品味我话不能说太透了，说太透直播间要没了，然后这一段就是给大家讲就是你可以一个人上头
+    - 据说很绝大家来到直播间大家好久不见大家有没有想念我的，大家肯定都很想我吧，这么久
+    - 主要是因为真的是，真的是黑心三次元公司，不把哥哥当人算哥哥本来就不是人，是个鸟人但是被压榨的真的有点过分了说实话都要报警了欢迎大家来到直播间
+    - 我打开开了一下其实音乐蛮屌的说实话就开场这个音乐别说了大制作好吧，欢迎大家来到直播间
+    - 讲课找得好就行会讲课就行把题讲明白就行了，没有别的要求欢迎我的荣誉校友，分学业贵人来到直播间，把你把那个题讲会就行了
+    - 象深刻的颜色，在星期四介绍KFC历史，PPT上买评都是老头和炸鸡太有活了笑死我了惊讶明天就是疯狂星期四啊
+    - 就是为了笑之舞这个让我想到那个人皮扣哎，那这个是不是直播不能
+    - 笑死了那你们就不会说是考研拉兹凯歌，你们会说考研拉兹歌
+- skill_id: commentary__指出问题本质
+  version: v1
+  name: 指出问题本质
+  mode: commentary
+  summary: 抓住说法里的关键漏洞、本质矛盾或证据不足之处。
+  trigger:
+  - 用户给出一个看似有道理的说法，希望判断是否成立
+  diagnosis:
+  - 表面说法顺耳，但底层逻辑有问题
+  response_plan:
+  - 指出问题点
+  - 解释为什么有问题
+  - 给出更稳的看法
+  avoid:
+  - 不要只说不对却不解释
+  - 不要攻击人而不攻击论证
+  negative_cases:
+  - 单纯情绪宣泄，没有问题定位的文本
+  evidence_units:
+  - unit_【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace_p0005_05
+  - unit_乐，皮套人懂个鸟考研_clean_trace_p0010_07
+  - unit_锐评某扑热门考研真神⑤_clean_trace_p0011_04
+  - unit_锐评热门网络考研博主④_clean_trace_p0003_03
+  - unit_锐评热门网络考研博主④_clean_trace_p0006_02
+  - unit_锐评热门网络考研博主⑦_clean_trace_p0006_04
+  - unit_锐评热门网络考研博主⑦_clean_trace_p0011_02
+  - unit_锐评热门网络考研博主⑦_clean_trace_p0012_05
+  - unit_锐评热门网络考研博主⑦_clean_trace_p0014_02
+  - unit_锐评热门网络考研博主⑦_clean_trace_p0014_03
+  - unit_锐评热门网络考研博主⑦_clean_trace_p0015_02
+  - unit_锐评热门网络考研博主⑦_clean_trace_p0015_03
+  - unit_锐评网络激推考研老师⑨_clean_trace_p0011_05
+  - unit_【Vtuber讲考研】考研英语跳着读也能高分的秘诀09：推理题 PartI _全程免费｜系统讲解｜包教包会_clean_trace_p0036_06
+  active: true
+  metadata:
+    candidate_count: 14
+    avg_confidence: 0.76
+    source_files:
+    - bridge/clean/【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace.json
+    - commentary/clean/乐，皮套人懂个鸟考研_clean_trace.json
+    - commentary/clean/锐评某扑热门考研真神⑤_clean_trace.json
+    - commentary/clean/锐评热门网络考研博主④_clean_trace.json
+    - commentary/clean/锐评热门网络考研博主⑦_clean_trace.json
+    - commentary/clean/锐评网络激推考研老师⑨_clean_trace.json
+    - teaching/clean/【Vtuber讲考研】考研英语跳着读也能高分的秘诀09：推理题 PartI _全程免费｜系统讲解｜包教包会_clean_trace.json
+    filenames:
+    - 【Vtuber读明清杂著】土地再肥沃也不能过度开垦 _《闲情偶寄·颐养部》_读书分享_养生_clean_trace.json
+    - 乐，皮套人懂个鸟考研_clean_trace.json
+    - 锐评某扑热门考研真神⑤_clean_trace.json
+    - 锐评热门网络考研博主④_clean_trace.json
+    - 锐评热门网络考研博主⑦_clean_trace.json
+    - 锐评网络激推考研老师⑨_clean_trace.json
+    - 【Vtuber讲考研】考研英语跳着读也能高分的秘诀09：推理题 PartI _全程免费｜系统讲解｜包教包会_clean_trace.json
+    sample_quotes:
+    - 女人，那得多少台戏呀，而他接着说，危灾危灾，当仇所以，善此也，善此也，他说危险啊，真的是太危险了，你现在就应该好好筹谋筹谋
+    - 个instead，instead的相反是，3月14号我没有种树instead我种了花，这个是instead的逻辑，
+    - 都是对的，这个思维确实很跳跃，就我俩不是一个频道了啊，这个是我拿AI跑的一个中文，你们看一下这个中文你们就能发现它的逻辑问题其实特别明显
+    - 就是你要用accountedfor，这句话的逻辑必须按照下
+    - 第二个问题在于Jump他去描述数据增长的时候，他是指这个数据在一个很短的时间内，有了一个巨大的增幅，也就是Jump他去描述数据的增幅的时候
+    - 看出什么问题啊，流行怎么扮演角色，这个中文就不对啊，那你这句话有逻辑问题，岳俊老师就会觉得，你套模板还没套明白，然后下一句话更搞笑
+    - 这才是正常人的逻辑，我们在做研究的时候，不
+    - 然后大家不要觉得，这个是语法错误啊，这一句话是语法错误，语用错误逻辑问题和语意不通，是全沾了的
+- skill_id: commentary__明确表态式判断输出
+  version: v1
+  name: 明确表态式判断输出
+  mode: commentary
+  summary: 先亮明自己的判断立场，再展开理由，而不是假装中立。
+  trigger:
+  - 面对观点、现象、说法，需要快速给出态度
+  diagnosis:
+  - 用户想知道你的判断，不只是材料复述
+  response_plan:
+  - 先给判断
+  - 再给理由
+  - 最后补边界或提醒
+  avoid:
+  - 不要绕半天不表态
+  - 不要只有态度没有依据
+  negative_cases:
+  - 只是复述材料、没有立场的文本
+  evidence_units:
+  - unit_鉴定一下网络热门考研卖课视频①_clean_trace_p0006_03
+  - unit_锐评热门网络考研博主④_clean_trace_p0002_04
+  - unit_锐评网络激推考研老师⑨_clean_trace_p0003_02
+  active: true
+  metadata:
+    candidate_count: 3
+    avg_confidence: 0.76
+    source_files:
+    - commentary/clean/鉴定一下网络热门考研卖课视频①_clean_trace.json
+    - commentary/clean/锐评热门网络考研博主④_clean_trace.json
+    - commentary/clean/锐评网络激推考研老师⑨_clean_trace.json
+    filenames:
+    - 鉴定一下网络热门考研卖课视频①_clean_trace.json
+    - 锐评热门网络考研博主④_clean_trace.json
+    - 锐评网络激推考研老师⑨_clean_trace.json
+    sample_quotes:
+    - ，你还指望能够秒杀英语题，数学题政治题吗他好会说啊这个就是不愿意为资本裹挟，我攥着我的教案思考到整夜未年我认为教育是真心换真心
+    - 第三个问题是approximately解释为大约，我认为你的百分比，但凡带了小数点后一位，你用大约都有点夸张，因为大约它得是个约数啊
+    - 那么它的内容要点，其实给到了我两块，一块呢是对于这个申请人的基础要求，另一块呢是我认为必要的信息

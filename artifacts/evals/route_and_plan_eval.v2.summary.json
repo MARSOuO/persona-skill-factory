@@ -1,0 +1,418 @@
+{
+  "records": 320,
+  "task_counts": {
+    "routing_eval": 160,
+    "skill_eval": 160
+  },
+  "routing": {
+    "total": 320,
+    "accuracy": 0.95,
+    "correct": 304,
+    "confusion_matrix": {
+      "commentary": {
+        "commentary": 80,
+        "bridge": 0,
+        "persona": 0,
+        "teaching": 0
+      },
+      "bridge": {
+        "commentary": 0,
+        "bridge": 80,
+        "persona": 0,
+        "teaching": 0
+      },
+      "persona": {
+        "commentary": 0,
+        "bridge": 0,
+        "persona": 80,
+        "teaching": 0
+      },
+      "teaching": {
+        "commentary": 16,
+        "bridge": 0,
+        "persona": 0,
+        "teaching": 64
+      }
+    }
+  },
+  "skills": {
+    "total": 160,
+    "top_k_hit_rate": 0.0,
+    "mean_jaccard": 0.0
+  },
+  "errors": {
+    "count": 168,
+    "sample": [
+      {
+        "row_index": 7,
+        "task": "routing_eval",
+        "query": "这种题是不是应该先判断，再选方法？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.point_out_essence"
+        ],
+        "gold_mode": "teaching",
+        "mode_error": true
+      },
+      {
+        "row_index": 13,
+        "task": "routing_eval",
+        "query": "这种题是不是应该先判断，再选方法？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.point_out_essence"
+        ],
+        "gold_mode": "teaching",
+        "mode_error": true
+      },
+      {
+        "row_index": 80,
+        "task": "routing_eval",
+        "query": "这种题是不是应该先判断，再选方法？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.point_out_essence"
+        ],
+        "gold_mode": "teaching",
+        "mode_error": true
+      },
+      {
+        "row_index": 88,
+        "task": "routing_eval",
+        "query": "这种题是不是应该先判断，再选方法？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.point_out_essence"
+        ],
+        "gold_mode": "teaching",
+        "mode_error": true
+      },
+      {
+        "row_index": 89,
+        "task": "routing_eval",
+        "query": "这种题是不是应该先判断，再选方法？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.point_out_essence"
+        ],
+        "gold_mode": "teaching",
+        "mode_error": true
+      },
+      {
+        "row_index": 90,
+        "task": "routing_eval",
+        "query": "这种题是不是应该先判断，再选方法？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.point_out_essence"
+        ],
+        "gold_mode": "teaching",
+        "mode_error": true
+      },
+      {
+        "row_index": 91,
+        "task": "routing_eval",
+        "query": "这种题是不是应该先判断，再选方法？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.point_out_essence"
+        ],
+        "gold_mode": "teaching",
+        "mode_error": true
+      },
+      {
+        "row_index": 92,
+        "task": "routing_eval",
+        "query": "这种题是不是应该先判断，再选方法？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.point_out_essence"
+        ],
+        "gold_mode": "teaching",
+        "mode_error": true
+      },
+      {
+        "row_index": 160,
+        "task": "skill_eval",
+        "query": "讲完之后能不能顺手帮我总结一下？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.summarize_after_explaining"
+        ],
+        "gold_mode": "teaching",
+        "gold_skills": [
+          "讲解后做归纳收束"
+        ],
+        "skill_jaccard": 0.0,
+        "skill_error": true
+      },
+      {
+        "row_index": 161,
+        "task": "skill_eval",
+        "query": "这部分内容能不能分步骤给我讲？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "teaching",
+        "gold_skills": [
+          "分步骤推进讲解"
+        ],
+        "skill_jaccard": 0.0,
+        "skill_error": true
+      },
+      {
+        "row_index": 162,
+        "task": "skill_eval",
+        "query": "这部分内容能不能分步骤给我讲？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "teaching",
+        "gold_skills": [
+          "分步骤推进讲解"
+        ],
+        "skill_jaccard": 0.0,
+        "skill_error": true
+      },
+      {
+        "row_index": 163,
+        "task": "skill_eval",
+        "query": "这部分内容能不能分步骤给我讲？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "teaching",
+        "gold_skills": [
+          "分步骤推进讲解"
+        ],
+        "skill_jaccard": 0.0,
+        "skill_error": true
+      },
+      {
+        "row_index": 164,
+        "task": "skill_eval",
+        "query": "能不能先举个例子，再解释这个知识点？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.analogy_or_example_entry",
+          "teaching.explain_progression"
+        ],
+        "gold_mode": "teaching",
+        "gold_skills": [
+          "用类比或例子导入知识点"
+        ],
+        "skill_jaccard": 0.0,
+        "skill_error": true
+      },
+      {
+        "row_index": 165,
+        "task": "skill_eval",
+        "query": "这部分内容能不能分步骤给我讲？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "teaching",
+        "gold_skills": [
+          "分步骤推进讲解"
+        ],
+        "skill_jaccard": 0.0,
+        "skill_error": true
+      },
+      {
+        "row_index": 166,
+        "task": "skill_eval",
+        "query": "这个知识点你能带着我慢慢讲明白吗？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "teaching",
+        "gold_skills": [
+          "教学解释推进"
+        ],
+        "skill_jaccard": 0.0,
+        "skill_error": true
+      },
+      {
+        "row_index": 167,
+        "task": "skill_eval",
+        "query": "这种题是不是应该先判断，再选方法？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.point_out_essence"
+        ],
+        "gold_mode": "teaching",
+        "mode_error": true,
+        "gold_skills": [
+          "先判断再选方法"
+        ],
+        "skill_jaccard": 0.0,
+        "skill_error": true
+      },
+      {
+        "row_index": 168,
+        "task": "skill_eval",
+        "query": "这部分内容能不能分步骤给我讲？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "teaching",
+        "gold_skills": [
+          "分步骤推进讲解"
+        ],
+        "skill_jaccard": 0.0,
+        "skill_error": true
+      },
+      {
+        "row_index": 169,
+        "task": "skill_eval",
+        "query": "讲完之后能不能顺手帮我总结一下？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.summarize_after_explaining"
+        ],
+        "gold_mode": "teaching",
+        "gold_skills": [
+          "讲解后做归纳收束"
+        ],
+        "skill_jaccard": 0.0,
+        "skill_error": true
+      },
+      {
+        "row_index": 170,
+        "task": "skill_eval",
+        "query": "讲完之后能不能顺手帮我总结一下？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.summarize_after_explaining"
+        ],
+        "gold_mode": "teaching",
+        "gold_skills": [
+          "讲解后做归纳收束"
+        ],
+        "skill_jaccard": 0.0,
+        "skill_error": true
+      },
+      {
+        "row_index": 171,
+        "task": "skill_eval",
+        "query": "讲完之后能不能顺手帮我总结一下？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.summarize_after_explaining"
+        ],
+        "gold_mode": "teaching",
+        "gold_skills": [
+          "讲解后做归纳收束"
+        ],
+        "skill_jaccard": 0.0,
+        "skill_error": true
+      },
+      {
+        "row_index": 172,
+        "task": "skill_eval",
+        "query": "这个知识点你能带着我慢慢讲明白吗？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "teaching",
+        "gold_skills": [
+          "教学解释推进"
+        ],
+        "skill_jaccard": 0.0,
+        "skill_error": true
+      },
+      {
+        "row_index": 173,
+        "task": "skill_eval",
+        "query": "这种题是不是应该先判断，再选方法？",
+        "predicted_mode": "commentary",
+        "predicted_skills": [
+          "commentary.judgment_output",
+          "commentary.point_out_essence"
+        ],
+        "gold_mode": "teaching",
+        "mode_error": true,
+        "gold_skills": [
+          "先判断再选方法"
+        ],
+        "skill_jaccard": 0.0,
+        "skill_error": true
+      },
+      {
+        "row_index": 174,
+        "task": "skill_eval",
+        "query": "这个知识点你能带着我慢慢讲明白吗？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "teaching",
+        "gold_skills": [
+          "教学解释推进"
+        ],
+        "skill_jaccard": 0.0,
+        "skill_error": true
+      },
+      {
+        "row_index": 175,
+        "task": "skill_eval",
+        "query": "这个知识点你能带着我慢慢讲明白吗？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "teaching",
+        "gold_skills": [
+          "教学解释推进"
+        ],
+        "skill_jaccard": 0.0,
+        "skill_error": true
+      },
+      {
+        "row_index": 176,
+        "task": "skill_eval",
+        "query": "这个知识点你能带着我慢慢讲明白吗？",
+        "predicted_mode": "teaching",
+        "predicted_skills": [
+          "teaching.explain_progression",
+          "teaching.stepwise_walkthrough"
+        ],
+        "gold_mode": "teaching",
+        "gold_skills": [
+          "教学解释推进"
+        ],
+        "skill_jaccard": 0.0,
+        "skill_error": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: persona-skill-factory
+Version: 0.1.0
+Summary: Offline distillation factory + online QA service for persona/teaching skill systems
+Requires-Python: >=3.11
+Requires-Dist: fastapi
+Requires-Dist: uvicorn[standard]
+Requires-Dist: pydantic>=2
+Requires-Dist: pydantic-settings
+Requires-Dist: sqlalchemy>=2
+Requires-Dist: psycopg[binary]
+Requires-Dist: redis
+Requires-Dist: httpx
+Requires-Dist: orjson
+Requires-Dist: pyyaml
+Requires-Dist: jsonlines
+Requires-Dist: tenacity

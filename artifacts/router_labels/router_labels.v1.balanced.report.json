@@ -1,0 +1,135 @@
+{
+  "raw_count": 15809,
+  "raw_mode": {
+    "bridge": 322,
+    "commentary": 834,
+    "teaching": 13333,
+    "persona": 1320
+  },
+  "dedup_count": 15807,
+  "dedup_mode": {
+    "bridge": 322,
+    "commentary": 834,
+    "teaching": 13331,
+    "persona": 1320
+  },
+  "capped_count": 712,
+  "capped_mode": {
+    "bridge": 80,
+    "commentary": 97,
+    "teaching": 400,
+    "persona": 135
+  },
+  "per_query_cap": 80,
+  "target_per_mode": 80,
+  "balanced_count": 320,
+  "balanced_mode": {
+    "teaching": 80,
+    "bridge": 80,
+    "commentary": 80,
+    "persona": 80
+  },
+  "splits": {
+    "train_count": 227,
+    "train_mode": {
+      "teaching": 56,
+      "bridge": 58,
+      "commentary": 57,
+      "persona": 56
+    },
+    "dev_count": 46,
+    "dev_mode": {
+      "teaching": 12,
+      "bridge": 10,
+      "commentary": 12,
+      "persona": 12
+    },
+    "test_count": 47,
+    "test_mode": {
+      "teaching": 12,
+      "bridge": 12,
+      "commentary": 11,
+      "persona": 12
+    }
+  },
+  "overlap": {
+    "train_dev": {
+      "shared_sources": 2,
+      "shared_queries": 9
+    },
+    "train_test": {
+      "shared_sources": 1,
+      "shared_queries": 11
+    },
+    "dev_test": {
+      "shared_sources": 0,
+      "shared_queries": 9
+    }
+  },
+  "baseline_eval": {
+    "dev": {
+      "count": 46,
+      "accuracy": 0.8913,
+      "gold": {
+        "teaching": 12,
+        "bridge": 10,
+        "commentary": 12,
+        "persona": 12
+      },
+      "pred": {
+        "bridge": 14,
+        "teaching": 7,
+        "commentary": 13,
+        "persona": 12
+      },
+      "confusion": {
+        "teaching": {
+          "bridge": 4,
+          "teaching": 7,
+          "commentary": 1
+        },
+        "bridge": {
+          "bridge": 10
+        },
+        "commentary": {
+          "commentary": 12
+        },
+        "persona": {
+          "persona": 12
+        }
+      }
+    },
+    "test": {
+      "count": 47,
+      "accuracy": 0.8511,
+      "gold": {
+        "teaching": 12,
+        "bridge": 12,
+        "commentary": 11,
+        "persona": 12
+      },
+      "pred": {
+        "bridge": 15,
+        "teaching": 5,
+        "commentary": 15,
+        "persona": 12
+      },
+      "confusion": {
+        "teaching": {
+          "bridge": 3,
+          "teaching": 5,
+          "commentary": 4
+        },
+        "bridge": {
+          "bridge": 12
+        },
+        "commentary": {
+          "commentary": 11
+        },
+        "persona": {
+          "persona": 12
+        }
+      }
+    }
+  }
+}
