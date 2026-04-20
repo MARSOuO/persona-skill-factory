@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Optional
+from typing import Optional
 
 
 @dataclass(frozen=True)
@@ -20,21 +20,8 @@ class CanonicalSkill:
 
 
 @dataclass(frozen=True)
-class EvidenceUnit:
-    evidence_id: str
-    unit_id: str
-    mode: str
-    text: str
-    source_file: str
-    paragraph_id: Optional[int] = None
-    metadata: dict[str, Any] = field(default_factory=dict)
-
-
-@dataclass(frozen=True)
 class AppConfig:
     canonical_skills_path: Path
-    evidence_index_path: Path
-    skill_unit_links_path: Path
     asset_version: str
     app_name: str
     app_version: str

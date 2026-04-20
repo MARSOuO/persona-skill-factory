@@ -37,16 +37,11 @@ class SelectedSkill(BaseModel):
 
 class EvidenceCandidate(BaseModel):
     evidence_id: str
-    unit_id: str
     skill_id: str
-    matched_skill_ids: list[str] = Field(default_factory=list)
     mode: str
     text: str
     score: float
-    source: str = "retrieval.skill-aware.v1"
-    source_file: str = ""
-    paragraph_id: Optional[int] = None
-    matched_terms: list[str] = Field(default_factory=list)
+    source: str = "canonical_skill_bound_evidence"
 
 
 class DraftAnswerShell(BaseModel):

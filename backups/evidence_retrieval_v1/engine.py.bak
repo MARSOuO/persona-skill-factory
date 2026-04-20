@@ -15,23 +15,14 @@ class PersonaSkillEngine:
         self.skills = load_skills(str(config.canonical_skills_path))
         self.router = RouterService(self.skills)
         self.selector = SkillSelectorService(self.skills)
-        self.retriever = EvidenceRetrieverService(
-            self.skills,
-            evidence_index_path=str(config.evidence_index_path),
-            skill_unit_links_path=str(config.skill_unit_links_path),
-        )
+        self.retriever = EvidenceRetrieverService(self.skills)
         self.planner = DraftShellPlanner(self.skills)
 
     def route_and_plan(self, req: RouteAndPlanRequest) -> RouteAndPlanResponse:
         normalized_query = " ".join(req.query.strip().split())
         predicted_mode = self.router.predict(normalized_query)
         selected_skills = self.selector.select(normalized_query, predicted_mode.label, req.top_k_skills)
-        evidence_candidates = self.retriever.retrieve(
-            normalized_query,
-            predicted_mode.label,
-            selected_skills,
-            req.top_k_evidence,
-        )
+        evidence_candidates = self.retriever.retrieve(normalized_query, selected_skills, req.top_k_evidence)
         draft_answer_shell = self.planner.build(normalized_query, predicted_mode, selected_skills)
 
         return RouteAndPlanResponse(
