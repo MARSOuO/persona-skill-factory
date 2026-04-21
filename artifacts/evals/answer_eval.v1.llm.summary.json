@@ -1,0 +1,44 @@
+{
+  "records": 320,
+  "overall": {
+    "mode_accuracy": 1.0,
+    "grounding_ok_rate": 1.0,
+    "drift_ok_rate": 0.7688,
+    "signal_hit_rate": 1.0,
+    "overall_pass_rate": 0.7688
+  },
+  "by_mode": {
+    "teaching": {
+      "count": 80,
+      "mode_accuracy": 1.0,
+      "grounding_ok_rate": 1.0,
+      "drift_ok_rate": 1.0,
+      "signal_hit_rate": 1.0,
+      "overall_pass_rate": 1.0
+    },
+    "bridge": {
+      "count": 80,
+      "mode_accuracy": 1.0,
+      "grounding_ok_rate": 1.0,
+      "drift_ok_rate": 1.0,
+      "signal_hit_rate": 1.0,
+      "overall_pass_rate": 1.0
+    },
+    "commentary": {
+      "count": 80,
+      "mode_accuracy": 1.0,
+      "grounding_ok_rate": 1.0,
+      "drift_ok_rate": 0.075,
+      "signal_hit_rate": 1.0,
+      "overall_pass_rate": 0.075
+    },
+    "persona": {
+      "count": 80,
+      "mode_accuracy": 1.0,
+      "grounding_ok_rate": 1.0,
+      "drift_ok_rate": 1.0,
+      "signal_hit_rate": 1.0,
+      "overall_pass_rate": 1.0
+    }
+  }
+}

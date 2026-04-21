@@ -33,24 +33,26 @@ class AnswerGenerator:
         plan: RouteAndPlanResponse,
         prompt_pack: PromptPack,
         allow_llm_answer: bool = False,
-        max_new_tokens: int = 384,
-        temperature: float = 0.4,
+        max_new_tokens: int = 2048,
+        temperature: float = 0.3,
     ) -> GeneratedAnswer:
         if allow_llm_answer:
             try:
                 return self._generate_with_llm(
                     prompt_pack=prompt_pack,
+                    plan=plan,
                     max_new_tokens=max_new_tokens,
                     temperature=temperature,
                 )
-            except Exception:
-                pass
+            except Exception as e:
+                print("DEBUG_LLM_EXCEPTION:", repr(e))
 
         return self.fallback(plan)
 
     def _generate_with_llm(
         self,
         prompt_pack: PromptPack,
+        plan: RouteAndPlanResponse,
         max_new_tokens: int,
         temperature: float,
     ) -> GeneratedAnswer:
@@ -86,12 +88,17 @@ class AnswerGenerator:
             with urllib.request.urlopen(req, timeout=timeout_sec) as resp:
                 raw = resp.read().decode("utf-8")
         except urllib.error.HTTPError as e:
-            raise RuntimeError(f"LLM HTTPError: {e.code}") from e
+            body = e.read().decode("utf-8", errors="ignore")
+            raise RuntimeError(f"LLM HTTPError: {e.code}, body={body}") from e
         except urllib.error.URLError as e:
             raise RuntimeError(f"LLM URLError: {e.reason}") from e
 
+        print("DEBUG_LLM_RAW:", raw[:2000])
+
         data = json.loads(raw)
         content = data["choices"][0]["message"]["content"]
+        print("DEBUG_LLM_CONTENT:", repr(content[:1000] if isinstance(content, str) else content))
+
         parsed = self._extract_json_object(content)
 
         answer_text = str(parsed.get("answer_text", "")).strip()
@@ -103,6 +110,21 @@ class AnswerGenerator:
 
         if not answer_text:
             raise RuntimeError("LLM returned empty answer_text")
+
+        # -----------------------------
+        # Commentary drift 校验逻辑
+        # -----------------------------
+        if plan.draft_answer_shell.answer_mode == "commentary":
+            allowed_keywords = ["分析", "判断", "评论", "典型片段", "依据"]
+            if not any(k in answer_text for k in allowed_keywords):
+                print("DEBUG_COMMENTARY_FAIL: 缺少核心关键词")
+                return self.fallback(plan)
+            if len(used_evidence_ids) < 1:
+                print("DEBUG_COMMENTARY_FAIL: 没有引用证据")
+                return self.fallback(plan)
+            if len(answer_text.split()) < 50:
+                print("DEBUG_COMMENTARY_FAIL: 输出过短")
+                return self.fallback(plan)
 
         return GeneratedAnswer(
             answer_text=answer_text,
@@ -160,7 +182,7 @@ class AnswerGenerator:
             if evidence_notes:
                 body.append(f"一个能支撑这个判断的典型片段是：{evidence_notes[0]}")
 
-        else:  # persona
+        else:
             body.append("咱们先把这个感觉接住。")
             if shell.body_outline:
                 body.append(shell.body_outline[0])

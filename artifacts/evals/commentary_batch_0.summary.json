@@ -1,0 +1,20 @@
+{
+  "records": 20,
+  "overall": {
+    "mode_accuracy": 1.0,
+    "grounding_ok_rate": 1.0,
+    "drift_ok_rate": 0.15,
+    "signal_hit_rate": 1.0,
+    "overall_pass_rate": 0.15
+  },
+  "by_mode": {
+    "commentary": {
+      "count": 20,
+      "mode_accuracy": 1.0,
+      "grounding_ok_rate": 1.0,
+      "drift_ok_rate": 0.15,
+      "signal_hit_rate": 1.0,
+      "overall_pass_rate": 0.15
+    }
+  }
+}

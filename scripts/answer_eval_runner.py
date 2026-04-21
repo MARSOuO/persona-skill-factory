@@ -9,6 +9,7 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
+MAX_NEW_TOKENS = 2048  # 全局设置
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
@@ -75,6 +76,7 @@ def evaluate_one(row: dict[str, Any], endpoint: str, allow_llm_answer: bool) -> 
         "top_k_skills": 2,
         "top_k_evidence": 5,
         "allow_llm_answer": allow_llm_answer,
+        "max_new_tokens": MAX_NEW_TOKENS,
         "return_plan": False,
     }
 
